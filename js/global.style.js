@@ -34,5 +34,11 @@ export const GlobalStyles = {
         height: 10,
         width: 10,
         resizeMode: 'contain'
+    },
+
+    line: {
+        height: 1,
+        backgroundColor: 'lightgray',
+        marginHorizontal: 10
     }
 };

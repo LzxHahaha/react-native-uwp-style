@@ -60,22 +60,13 @@ export default class NavPane extends Component {
         rowPress && rowPress();
     }
 
-    gotoPage(page) {
-        let stack = nav.getCurrentRoutes();
+    jumpToPage(page) {
+        let stack = this.nav.getCurrentRoutes();
         let top = stack.length - 1;
 
         if (page !== stack[top]) {
-            this.setState({title: page.name});
-            nav.push(page);
+            this.nav.jumpTo(page);
         }
-    }
-
-    renderBar() {
-        return (
-            <View style={styles.title}>
-                <Text style={styles.titleText}>{this.state.title}</Text>
-            </View>
-        );
     }
 
     renderButtons(rowData) {
@@ -103,30 +94,31 @@ export default class NavPane extends Component {
     }
 
     render() {
-        const {initialName, initialComponent} = this.props;
+        const {initialRouteStack} = this.props;
 
         return (
             <View style={styles.container}>
 
-                <Navigator ref={nav => {global.nav = nav}}
-                           initialRoute={{ name: initialName, component: initialComponent}}
+                <Navigator ref={nav => {this.nav = nav}}
+                           initialRouteStack={initialRouteStack}
                            configureScene={() => {
-                               return Navigator.SceneConfigs.PushFromRight;
-                           }}
+                           return Navigator.SceneConfigs.PushFromRight;
+                       }}
                            renderScene={(route, navigator) => {
-                               let Component = route.component;
-                               if (route.component) {
-                                   return <Component {...route.params} navigator={navigator} />
-                               }
-                           }}
+                           let Component = route.component;
+                           if (route.component) {
+                               return <Component {...route.params} navigator={navigator} title={route.name} />
+                           }
+                       }}
                 />
 
-                <Button style={styles.button} backgroundColor={GlobalColors.blue} highlightColor={GlobalColors.darkBlue}
+                <Button style={styles.button} backgroundColor={GlobalColors.blue}
+                        highlightColor={GlobalColors.darkBlue}
                         onPress={() => {
-                        this.togglePane()
-                        }}
+                    this.togglePane()
+                    }}
                 >
-                    <Hamburger color={'white'} />
+                    <Hamburger color={'white'}/>
                 </Button>
 
                 <View style={[styles.pane, {width: this.state.width, opacity: this.state.isPaneOpen}]}>

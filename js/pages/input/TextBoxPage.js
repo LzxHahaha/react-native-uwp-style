@@ -4,11 +4,11 @@ import React, {
     Text
 } from 'react-native';
 
-import TextBox from '../components/TextBox';
-import PasswordBox from '../components/PasswordBox';
-import Close from '../symbols/Close';
+import TextBox from '../../components/TextBox';
+import PasswordBox from '../../components/PasswordBox';
+import Close from '../../symbols/Close';
 
-import {styles} from './TestPage.style';
+import {styles} from './../TestPage.style.js';
 
 export default class ButtonPage extends Component {
     constructor(props) {

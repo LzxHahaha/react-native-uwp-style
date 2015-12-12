@@ -10,6 +10,7 @@ Some react-native's components with Windows 10 style. You can get the design tem
 * [Button](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/Button.js)
 * [TextBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/TextBox.js)
 * [PasswordBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/PasswordBox.js)
+* [NavPane](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/NavPane.js)
 
 ### TODO
 * Slider
@@ -27,7 +28,6 @@ Some react-native's components with Windows 10 style. You can get the design tem
 * RadioButton
 * ToogleSwitch
 * Hub
-* NavPane
 * Tabs
 * Pivot
 * ContextMenu
