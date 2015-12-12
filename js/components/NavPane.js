@@ -60,12 +60,12 @@ export default class NavPane extends Component {
         rowPress && rowPress();
     }
 
-    jumpToPage(page) {
+    gotoPage(page) {
         let stack = this.nav.getCurrentRoutes();
         let top = stack.length - 1;
 
         if (page !== stack[top]) {
-            this.nav.jumpTo(page);
+            this.nav.push(page);
         }
     }
 
@@ -94,13 +94,13 @@ export default class NavPane extends Component {
     }
 
     render() {
-        const {initialRouteStack} = this.props;
+        const {initialRoute} = this.props;
 
         return (
             <View style={styles.container}>
 
                 <Navigator ref={nav => {this.nav = nav}}
-                           initialRouteStack={initialRouteStack}
+                           initialRoute={initialRoute}
                            configureScene={() => {
                            return Navigator.SceneConfigs.PushFromRight;
                        }}

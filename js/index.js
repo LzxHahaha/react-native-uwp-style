@@ -22,7 +22,7 @@ export default class UWP extends Component {
         super(props);
 
         let buttons = [
-            {text: 'ACTIONS', onPress: () => {this.refs.NAV.jumpToPage(Pages.ActionIndex)}},
+            {text: 'ACTIONS', onPress: () => {this.refs.NAV.gotoPage(Pages.ActionIndex)}},
             {text: 'DROP-DOWNS', onPress: () => {}},
             {text: 'INPUT FIELDS', onPress: () => {}},
             {text: 'NAVIGATION', onPress: () => {}},
@@ -39,13 +39,8 @@ export default class UWP extends Component {
     render() {
         return (
             <NavPane ref={'NAV'} buttons={this.state.buttons}
-                     initialRouteStack={[
-                        Pages.ActionIndex,
-                        Pages.Home
-                     ]}
+                     initialRoute={Pages.Home}
             />
         );
     }
 }
-
-

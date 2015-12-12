@@ -19,15 +19,9 @@ export default class ButtonPage extends Component {
     }
 
     render() {
-        const {navigator} = this.props;
-
         return (
             <View style={styles.container}>
                 <NavPaneTitle title={'Button DEMO'} />
-
-                <Button text={'Go Back'} onPress={() => {
-                    navigator.pop();
-                }} />
 
                 <Field header={'Enable Button'} style={styles.field}>
                     <Button text={'Button'} onPress={() => {}} />
@@ -56,13 +50,12 @@ export default class ButtonPage extends Component {
                     />
                 </Field>
 
-                <Button text="Loooooooong Button"
+                <Button text={'Go Back'}
                         style={{margin: 10}}
-                        onPress={() => {}} />
-
-                <Button text="Button"
-                        style={{alignSelf: 'center'}}
-                        onPress={() => {}} />
+                        onPress={() => {
+                            this.props.navigator.pop();
+                        }}
+                />
             </View>
         )
     }

@@ -10,9 +10,8 @@ import {styles} from './Hyperlink.style';
 import {GlobalColors, GlobalFontSize} from '../global.style';
 
 const propTypes = {
-    style: PropTypes.StyleSheet,
-    enable: PropTypes.boolean,
-    color: PropTypes.String,
+    enable: PropTypes.bool,
+    color: PropTypes.string,
     onPress: PropTypes.func
 };
 

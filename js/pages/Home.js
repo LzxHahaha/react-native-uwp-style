@@ -18,9 +18,7 @@ export default class Home extends Component {
     }
 
     onPress(page) {
-        const { navigator } = this.props;
-
-        navigator.push(page);
+        this.props.navigator.push(page);
     }
 
     render() {

@@ -4,6 +4,7 @@ import React, {
     Text
 } from 'react-native';
 
+import NavPaneTitle from '../../components/NavPaneTitle';
 import Hyperlink from '../../components/Hyperlink';
 import Field from '../../components/Field';
 
@@ -25,6 +26,8 @@ export default class HyperlinkPage extends Component {
 
         return (
             <View style={styles.container}>
+                <NavPaneTitle title={this.props.title} />
+
                 <Field header={'Default Enable'} style={styles.field}>
                     <Hyperlink text={'Click me!'}
                                enable={true}
@@ -47,7 +50,8 @@ export default class HyperlinkPage extends Component {
                                onPress={() => {this.setState({customEnable: !customEnable});}}
                                color={'red'}
                     />
-                </Field>
+                </Field>y
+
                 <Text>Next hyperlink is {customEnable ? 'enable' : 'disable'}.</Text>
 
                 <Field header={'Custom Disable'} style={styles.field}>
