@@ -4,10 +4,14 @@ import React, {
     Text,
     TouchableOpacity,
     ListView,
-    Navigator
+    Navigator,
+    Image
 } from 'react-native';
 
 import {styles} from './index.style';
+
+import NavPane from './components/NavPane';
+import NavPaneTitle from './components/NavPaneTitle';
 
 import * as page from './config/pages';
 
@@ -15,23 +19,24 @@ export default class UWP extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        let buttons = [
+            {text: 'ACTIONS', onPress: () => {this.refs.NAV.gotoPage(page.Button)}},
+            {text: 'DROP-DOWNS', onPress: () => {}},
+            {text: 'INPUT FIELDS', onPress: () => {}},
+            {text: 'NAVIGATION', onPress: () => {}},
+            {text: 'OVERLAYS', onPress: () => {}},
+            {text: 'PROGRESS', onPress: () => {}},
+            {text: 'TOGGLES', onPress: () => {}}
+        ];
+
+        this.state = {
+            buttons: buttons
+        };
     }
 
     render() {
         return (
-            <Navigator
-                initialRoute={{ name: 'home', component: Home }}
-                configureScene={() => {
-                    return Navigator.SceneConfigs.VerticalDownSwipeJump;
-                }}
-                renderScene={(route, navigator) => {
-                    let Component = route.component;
-                    if (route.component) {
-                        return <Component {...route.params} navigator={navigator} />
-                    }
-                }}
-            />
+            <NavPane ref={'NAV'} initialName={'RN-UWP DEMO'} initialComponent={Home} buttons={this.state.buttons} />
         );
     }
 }
@@ -40,15 +45,7 @@ class Home extends Component {
     constructor(props) {
         super(props);
 
-        let dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-        let buttons = [
-            {text: 'Button Demo', page: page.Button},
-            {text: 'Hyperlink Demo', page: page.Hyperlink},
-            {text: 'TextBox Demo', page: page.TextBox}
-        ];
-
         this.state = {
-            buttons: dataSource.cloneWithRows(buttons)
         };
     }
 
@@ -58,24 +55,14 @@ class Home extends Component {
         navigator.push(page);
     }
 
-    renderRow(rowData) {
-        return (
-            <TouchableOpacity onPress={() => {
-                this.onPress(rowData.page)
-            }}>
-                <Text>{rowData.text}</Text>
-            </TouchableOpacity>
-        )
-    }
-
     render() {
-
         return (
-            <View>
-                <ListView
-                    dataSource={this.state.buttons}
-                    renderRow={this.renderRow.bind(this)}
-                />
+            <View style={styles.container} title={'RN-UWP DEMO'}>
+                <NavPaneTitle title={'RN-UWP DEMO'} />
+                <View style={styles.center}>
+                    <Image source={require('./image/logo.png')} style={styles.icon} />
+                    <Text>Welcome to React Native!</Text>
+                </View>
             </View>
         );
     }

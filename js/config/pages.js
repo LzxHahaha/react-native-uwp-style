@@ -1,18 +1,18 @@
-import HyperlinkPage from '../testpages/HyperlinkPage';
-import ButtonPage from '../testpages/ButtonPage';
-import TextBoxPage from '../testpages/TextBoxPage';
+import HyperlinkPage from '../pages/action/HyperlinkPage';
+import ButtonPage from '../pages/action/ButtonPage';
+import TextBoxPage from '../pages/TextBoxPage';
 
 exports.Hyperlink = {
     component: HyperlinkPage,
-    name: 'Hyperlink'
+    name: 'Hyperlink Demo'
 };
 
 exports.Button = {
     component: ButtonPage,
-    name: 'Button'
+    name: 'Button Demo'
 };
 
 exports.TextBox = {
     component: TextBoxPage,
-    name: 'TextBox'
+    name: 'TextBox Demo'
 };

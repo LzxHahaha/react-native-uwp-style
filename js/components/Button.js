@@ -10,11 +10,10 @@ import {styles} from './Button.style';
 import {GlobalColors, GlobalFontSize} from '../global.style';
 
 const propTypes = {
-    style: PropTypes.StyleSheet,
-    enable: PropTypes.boolean,
-    backgroundColor: PropTypes.String,
-    color: PropTypes.String,
-    highlightColor: PropTypes.String,
+    enable: PropTypes.bool,
+    backgroundColor: PropTypes.string,
+    color: PropTypes.string,
+    highlightColor: PropTypes.string,
     onPress: PropTypes.func
 };
 
@@ -22,7 +21,7 @@ const defaultProps = {
     enable: true,
     backgroundColor: GlobalColors.gray,
     color: GlobalColors.black,
-    highlightColor: GlobalColors.darkGray,
+    highlightColor: 'lightgray',
     onPress: () => {}
 };
 
@@ -38,10 +37,12 @@ export default class Button extends Component {
     }
 
     render() {
-        const {enable, backgroundColor, color, highlightColor, text} = this.props;
+        const {enable, backgroundColor, color, highlightColor, text, children} = this.props;
 
         let textColor =  (enable ? color : GlobalColors.darkGray);
         let highlight = enable ? highlightColor : backgroundColor;
+        let content = text ? (<Text style={[styles.text, {color: textColor}]}>{text}</Text>)
+                           : (<View style={styles.content}>{children}</View>);
 
         return (
             <TouchableHighlight
@@ -49,7 +50,7 @@ export default class Button extends Component {
                 onPress={this.onPress.bind(this)}
                 style={[styles.container, this.props.style, {backgroundColor: backgroundColor}]}
             >
-                <Text style={[styles.text, {color: textColor}]}>{text}</Text>
+                { content }
             </TouchableHighlight>
         );
     }

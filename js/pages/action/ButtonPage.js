@@ -4,11 +4,11 @@ import React, {
     Text
 } from 'react-native';
 
-import {styles} from './TestPage.style';
-let index = require('../index');
+import {styles} from './../TestPage.style.js';
 
-import Button from '../components/Button';
-import Field from '../components/Field';
+import NavPaneTitle from '../../components/NavPaneTitle';
+import Button from '../../components/Button';
+import Field from '../../components/Field';
 
 export default class ButtonPage extends Component {
     constructor(props) {
@@ -23,6 +23,8 @@ export default class ButtonPage extends Component {
 
         return (
             <View style={styles.container}>
+                <NavPaneTitle title={'Button DEMO'} />
+
                 <Button text={'Go Back'} onPress={() => {
                     navigator.pop();
                 }} />

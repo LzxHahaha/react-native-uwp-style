@@ -7,16 +7,13 @@ import {GlobalColors} from '../global.style';
 export var styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
-        backgroundColor: GlobalColors.gray
+        alignItems: 'center'
     },
 
-    text: {
-        marginHorizontal: 25,
-        marginVertical: 5,
-        alignSelf: 'center'
-    },
-
-    content: {
-        justifyContent: 'center',
+    line: {
+        width: 20,
+        height: 3,
+        backgroundColor: GlobalColors.black,
+        marginVertical: 2
     }
 });

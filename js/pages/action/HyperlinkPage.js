@@ -4,10 +4,10 @@ import React, {
     Text
 } from 'react-native';
 
-import Hyperlink from '../components/Hyperlink';
-import Field from '../components/Field';
+import Hyperlink from '../../components/Hyperlink';
+import Field from '../../components/Field';
 
-import {styles} from './TestPage.style';
+import {styles} from './../TestPage.style.js';
 
 export default class HyperlinkPage extends Component {
     constructor(props) {

@@ -11,6 +11,8 @@ export const GlobalColors = {
     black: 'black',
     white: 'white',
 
+    dark: '#2b2b2b',
+
     blue: '#0078d7',
     darkBlue: '#0063B1',
 
