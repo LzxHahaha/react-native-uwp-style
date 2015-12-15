@@ -24,6 +24,6 @@ export var styles = StyleSheet.create({
 
     button: {
         margin: 10,
-        height: 30
+        paddingVertical: 5
     }
 });

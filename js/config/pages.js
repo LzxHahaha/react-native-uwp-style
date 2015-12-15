@@ -4,6 +4,8 @@ import PageIndex from '../pages/PagesIndex';
 
 import HyperlinkPage from '../pages/action/HyperlinkPage';
 import ButtonPage from '../pages/action/ButtonPage';
+import SliderPage from '../pages/action/SliderPage';
+
 import TextBoxPage from '../pages/input/TextBoxPage';
 
 export default class Pages {}
@@ -21,6 +23,11 @@ Pages.Hyperlink = {
 Pages.Button = {
     component: ButtonPage,
     name: 'Button Demo'
+};
+
+Pages.Slider = {
+    component: SliderPage,
+    name: 'Slider Demo'
 };
 
 Pages.TextBox = {

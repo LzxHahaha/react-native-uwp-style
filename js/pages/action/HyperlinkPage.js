@@ -4,25 +4,27 @@ import React, {
     Text
 } from 'react-native';
 
+import {styles} from './../TestPage.style.js';
+
 import DemoTemplate from '../DemoTemplate';
 
 import NavPaneTitle from '../../components/NavPaneTitle';
 import Hyperlink from '../../components/Hyperlink';
 import Field from '../../components/Field';
 
-import {styles} from './../TestPage.style.js';
-
-let document = [
-    {name: 'enable', type: 'bool', description: ''},
-    {name: 'color', type: 'string', description: 'Text\'s color.'},
-    {name: 'onPress', type: 'function', description: ''}
-];
-
 export default class HyperlinkPage extends Component {
     constructor(props) {
         super(props);
 
+        let document = [
+            {name: 'enable', type: 'bool', description: ''},
+            {name: 'color', type: 'string', description: 'Text\'s color.'},
+            {name: 'onPress', type: 'function', description: ''},
+            {name: 'text', type: 'string', description: ''}
+        ];
+
         this.state = {
+            document: document,
             defaultCount: 0,
             customEnable: false,
             customCount: 0
@@ -33,7 +35,7 @@ export default class HyperlinkPage extends Component {
         const {defaultCount, customEnable, customCount} = this.state;
 
         return (
-            <DemoTemplate title={'HYPERLINK DEMO'} document={document}>
+            <DemoTemplate title={'HYPERLINK DEMO'} document={this.state.document}>
 
                 <Field header={'Default Enable'} style={styles.field}>
                     <Hyperlink text={'Click me!'}

@@ -52,6 +52,7 @@ export var styles = StyleSheet.create({
     },
 
     backButton: {
-        marginVertical: 20
+        marginVertical: 20,
+        paddingVertical: 5
     }
 });

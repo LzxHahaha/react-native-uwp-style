@@ -10,27 +10,29 @@ import DemoTemplate from '../DemoTemplate';
 import Button from '../../components/Button';
 import Field from '../../components/Field';
 
-let document = [
-    {name: 'enable', type: 'bool', description: ''},
-    {name: 'backgroundColor', type: 'string', description: ''},
-    {name: 'color', type: 'string', description: 'Text\'s color'},
-    {name: 'highlightColor', type: 'string', description: ''},
-    {name: 'onPress', type: 'function', description: ''},
-    {name: 'children', type: 'node',
-        description: 'It will only display the text property or children of Button component'}
-];
-
 export default class ButtonPage extends Component {
     constructor(props) {
         super(props);
 
+        let document = [
+            {name: 'backgroundColor', type: 'string', description: ''},
+            {name: 'children', type: 'node',
+                description: 'It will only display the text property or children of Button component'},
+            {name: 'color', type: 'string', description: 'Text\'s color'},
+            {name: 'enable', type: 'bool', description: ''},
+            {name: 'highlightColor', type: 'string', description: ''},
+            {name: 'onPress', type: 'function', description: ''},
+            {name: 'text', type: 'string', description: ''}
+        ];
+
         this.state = {
+            document: document
         };
     }
 
     render() {
         return (
-            <DemoTemplate title={'BUTTON DEMO'} document={document}>
+            <DemoTemplate title={'BUTTON DEMO'} document={this.state.document}>
 
                 <Field header={'Enable Button'} style={styles.field}>
                     <Button text={'Button'} onPress={() => {}} />
