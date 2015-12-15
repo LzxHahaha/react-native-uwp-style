@@ -1,4 +1,5 @@
 import React, {
+    Animated,
     Component,
     PropTypes,
     Text,
@@ -30,8 +31,8 @@ export default class NavPane extends Component {
         let dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2 });
 
         this.state = {
-            isPaneOpen: 0,
-            width: 0,
+            isPaneOpen: false,
+            width: new Animated.Value(0.1),
             buttons: dataSource.cloneWithRows(this.props.buttons),
             title: this.props.initialName
         };
@@ -59,17 +60,28 @@ export default class NavPane extends Component {
     }
 
     togglePane() {
-        if (this.state.isPaneOpen) {
+        const {paneWidth} = this.props;
+        const {isPaneOpen, width}  = this.state;
+
+        if (isPaneOpen) {
+            Animated.timing(width, {
+                toValue: 0.1,
+                duration: 150
+            }).start();
             this.setState({
-                isPaneOpen: 0,
-                width: 0.1
+                isPaneOpen: false
             });
         }
         else {
+            width.setValue(paneWidth + 10);
+            Animated.spring(width, {
+                toValue: paneWidth,
+                tension: 10,
+                friction: 2
+            }).start();
             this.setState({
-                isPaneOpen: 1,
-                width: this.props.paneWidth
-            })
+                isPaneOpen: true
+            });
         }
     }
 
@@ -136,13 +148,13 @@ export default class NavPane extends Component {
                     <Hamburger color={'white'}/>
                 </Button>
 
-                <View style={[styles.pane, {width: this.state.width, opacity: this.state.isPaneOpen}]}>
+                <Animated.View style={[styles.pane, {width: this.state.width}]}>
                     <ListView
                         style={styles.paneList}
                         dataSource={this.state.buttons}
                         renderRow={this.renderButtons.bind(this)}
                     />
-                </View>
+                </Animated.View>
             </View>
         );
     }
