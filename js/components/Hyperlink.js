@@ -29,22 +29,21 @@ export default class Hyperlink extends Component {
     }
 
     onPress() {
-
         if (this.props.enable) {
             this.props.onPress();
         }
     }
 
     render() {
-        const {enable, color} = this.props;
+        const {enable, color, style, text, ...others} = this.props;
 
         let linkColor = color ? color : (enable? GlobalColors.blue : GlobalColors.gray);
         let activeOpacity = enable ? 0.5 : 1;
 
         return (
-            <View style={[styles.container, this.props.style]} {...this.props}>
+            <View style={[styles.container, style]} {...others}>
                 <TouchableOpacity activeOpacity={activeOpacity} onPress={this.onPress.bind(this)}>
-                    <Text style={[styles.link, {color: linkColor}]}>{this.props.text}</Text>
+                    <Text style={[styles.link, {color: linkColor}]}>{text}</Text>
                 </TouchableOpacity>
             </View>
         );

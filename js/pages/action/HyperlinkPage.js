@@ -4,11 +4,19 @@ import React, {
     Text
 } from 'react-native';
 
+import DemoTemplate from '../DemoTemplate';
+
 import NavPaneTitle from '../../components/NavPaneTitle';
 import Hyperlink from '../../components/Hyperlink';
 import Field from '../../components/Field';
 
 import {styles} from './../TestPage.style.js';
+
+let document = [
+    {name: 'enable', type: 'bool', description: ''},
+    {name: 'color', type: 'string', description: 'Text\'s color.'},
+    {name: 'onPress', type: 'function', description: ''}
+];
 
 export default class HyperlinkPage extends Component {
     constructor(props) {
@@ -25,8 +33,7 @@ export default class HyperlinkPage extends Component {
         const {defaultCount, customEnable, customCount} = this.state;
 
         return (
-            <View style={styles.container}>
-                <NavPaneTitle title={this.props.title} />
+            <DemoTemplate title={'HYPERLINK DEMO'} document={document}>
 
                 <Field header={'Default Enable'} style={styles.field}>
                     <Hyperlink text={'Click me!'}
@@ -50,7 +57,7 @@ export default class HyperlinkPage extends Component {
                                onPress={() => {this.setState({customEnable: !customEnable});}}
                                color={'red'}
                     />
-                </Field>y
+                </Field>
 
                 <Text>Next hyperlink is {customEnable ? 'enable' : 'disable'}.</Text>
 
@@ -62,7 +69,8 @@ export default class HyperlinkPage extends Component {
                     />
                 </Field>
                 <Text>You click this hyperlink {customCount} times.</Text>
-            </View>
+
+            </DemoTemplate>
         );
     }
 }

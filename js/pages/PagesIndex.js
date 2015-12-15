@@ -9,6 +9,7 @@ import React, {
 import {styles} from './PagesIndex.style.js';
 import {GlobalStyles} from '../global.style';
 
+import Router from '../Router';
 import NavPaneTitle from '../components/NavPaneTitle';
 import Button from '../components/Button';
 
@@ -32,11 +33,9 @@ export default class PagesIndex extends Component {
     }
 
     renderRow(rowData) {
-        const {navigator} = this.props;
-
         return (
             <TouchableOpacity onPress={() => {
-                navigator.push(rowData.page);
+                Router.goto(rowData.page);
             }} >
                 <Text style={styles.rowTitle}>{'<' + rowData.text + '>'}</Text>
             </TouchableOpacity>
@@ -54,7 +53,7 @@ export default class PagesIndex extends Component {
             <View>
                 <Button text={'Go Back'} style={styles.button}
                         onPress={() => {
-                            this.props.navigator.pop();
+                            Router.goBack();
                         }} />
             </View>
         );

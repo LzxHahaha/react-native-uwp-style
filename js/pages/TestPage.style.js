@@ -8,7 +8,7 @@ export var styles = StyleSheet.create({
     },
 
     field: {
-        marginTop: 10
+        marginVertical: 10
     },
 
     textbox: {

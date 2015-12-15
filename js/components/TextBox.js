@@ -13,19 +13,18 @@ import {GlobalColors, GlobalStyles} from '../global.style';
 import Close from '../symbols/Close';
 
 const propTypes = {
-    editable: PropTypes.boolean,
-    highlightColor: PropTypes.String,
+    editable: PropTypes.bool,
+    hideClear: PropTypes.bool,
+    highlightColor: PropTypes.string,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func
 };
 
 const defaultProps = {
     editable: true,
+    hideClear: true,
     highlightColor: GlobalColors.blue,
-    onChangeText: (text) => {},
-    onFocus: () => {},
-    onBlur: () => {}
-};
+}
 
 export default class TextBox extends Component {
     constructor(props) {
@@ -68,7 +67,7 @@ export default class TextBox extends Component {
         }
 
         let clear = null;
-        if (this.state.focus && this.props.editable && this.state.value) {
+        if ((!this.props.hideClear || this.state.focus) && this.props.editable && this.state.value) {
             clear = (
                 <TouchableOpacity onPress={this.clearInput.bind(this)}>
                     <Close style={styles.clear} />

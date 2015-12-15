@@ -37,7 +37,7 @@ export default class Button extends Component {
     }
 
     render() {
-        const {enable, backgroundColor, color, highlightColor, text, children} = this.props;
+        const {enable, backgroundColor, color, highlightColor, text, children, style} = this.props;
 
         let textColor =  (enable ? color : GlobalColors.darkGray);
         let highlight = enable ? highlightColor : backgroundColor;
@@ -48,7 +48,7 @@ export default class Button extends Component {
             <TouchableHighlight
                 activeOpacity={1} underlayColor={highlight}
                 onPress={this.onPress.bind(this)}
-                style={[styles.container, this.props.style, {backgroundColor: backgroundColor}]}
+                style={[styles.container, style, {backgroundColor: backgroundColor}]}
             >
                 { content }
             </TouchableHighlight>

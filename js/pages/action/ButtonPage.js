@@ -6,9 +6,19 @@ import React, {
 
 import {styles} from './../TestPage.style.js';
 
-import NavPaneTitle from '../../components/NavPaneTitle';
+import DemoTemplate from '../DemoTemplate';
 import Button from '../../components/Button';
 import Field from '../../components/Field';
+
+let document = [
+    {name: 'enable', type: 'bool', description: ''},
+    {name: 'backgroundColor', type: 'string', description: ''},
+    {name: 'color', type: 'string', description: 'Text\'s color'},
+    {name: 'highlightColor', type: 'string', description: ''},
+    {name: 'onPress', type: 'function', description: ''},
+    {name: 'children', type: 'node',
+        description: 'It will only display the text property or children of Button component'}
+];
 
 export default class ButtonPage extends Component {
     constructor(props) {
@@ -20,8 +30,7 @@ export default class ButtonPage extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <NavPaneTitle title={'Button DEMO'} />
+            <DemoTemplate title={'BUTTON DEMO'} document={document}>
 
                 <Field header={'Enable Button'} style={styles.field}>
                     <Button text={'Button'} onPress={() => {}} />
@@ -49,14 +58,7 @@ export default class ButtonPage extends Component {
                             style={{width: 150}}
                     />
                 </Field>
-
-                <Button text={'Go Back'}
-                        style={{margin: 10}}
-                        onPress={() => {
-                            this.props.navigator.pop();
-                        }}
-                />
-            </View>
+            </DemoTemplate>
         )
     }
 

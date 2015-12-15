@@ -5,13 +5,15 @@ import React, {
     TouchableOpacity,
     ListView,
     Navigator,
-    Image
+    Image,
+    BackAndroid
 } from 'react-native';
 
 import {styles} from './index.style';
 
 import NavPane from './components/NavPane';
 import NavPaneTitle from './components/NavPaneTitle';
+import Router from './Router';
 
 import Pages from './config/pages';
 
@@ -22,7 +24,7 @@ export default class UWP extends Component {
         super(props);
 
         let buttons = [
-            {text: 'ACTIONS', onPress: () => {this.refs.NAV.gotoPage(Pages.ActionIndex)}},
+            {text: 'ACTIONS', onPress: () => {Router.goto(Pages.ActionIndex)}},
             {text: 'DROP-DOWNS', onPress: () => {}},
             {text: 'INPUT FIELDS', onPress: () => {}},
             {text: 'NAVIGATION', onPress: () => {}},
@@ -38,9 +40,14 @@ export default class UWP extends Component {
 
     render() {
         return (
-            <NavPane ref={'NAV'} buttons={this.state.buttons}
+            <NavPane buttons={this.state.buttons}
                      initialRoute={Pages.Home}
             />
         );
     }
 }
+
+BackAndroid.addEventListener('hardwareBackPress', function() {
+    Router.goBack();
+    return true;
+});

@@ -37,6 +37,27 @@ export default class NavPane extends Component {
         };
     }
 
+    gotoPage(page) {
+        let stack = this.nav.getCurrentRoutes();
+        if (stack.indexOf(page) === -1) {
+            this.nav.push(page);
+        }
+        else {
+            ++NavPane.jumpCount;
+            this.nav.jumpTo(page);
+        }
+    }
+
+    goBack() {
+        if (NavPane.jumpCount > 0) {
+            --NavPane.jumpCount;
+            this.nav.jumpBack();
+        }
+        else {
+            this.nav.pop();
+        }
+    }
+
     togglePane() {
         if (this.state.isPaneOpen) {
             this.setState({
@@ -58,15 +79,6 @@ export default class NavPane extends Component {
         }
 
         rowPress && rowPress();
-    }
-
-    gotoPage(page) {
-        let stack = this.nav.getCurrentRoutes();
-        let top = stack.length - 1;
-
-        if (page !== stack[top]) {
-            this.nav.push(page);
-        }
     }
 
     renderButtons(rowData) {
@@ -94,6 +106,9 @@ export default class NavPane extends Component {
     }
 
     render() {
+        NavPane.instance = this;
+        NavPane.jumpCount = 0;
+
         const {initialRoute} = this.props;
 
         return (
