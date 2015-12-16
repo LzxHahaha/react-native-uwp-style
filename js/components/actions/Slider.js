@@ -13,6 +13,7 @@ import {GlobalColors, GlobalFontSize} from '../../global.style.js';
 import Button from './Button'
 
 const propTypes = {
+    enable: PropTypes.bool,
     max: PropTypes.number,
     value: PropTypes.number,
     color: PropTypes.string,
@@ -20,6 +21,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+    enable: true,
     max: 100,
     value: 0,
     color: GlobalColors.blue,
@@ -49,12 +51,17 @@ export default class Slider extends Component {
 
         onPanResponderGrant: (evt, gestureState) => {
             const {value, step, xMin, xCurrent, width} = this.state;
-            if (xMin == null) {
+            if (this.props.enable && xMin == null) {
                 let min = gestureState.x0 - xCurrent;
                 this.setState({
                     xCurrent: gestureState.x0,
                     xMin: min,
                     xMax: width + min
+                })
+            }
+            else {
+                this.setState({
+                    xCurrent: gestureState.x0
                 })
             }
         },
@@ -77,6 +84,10 @@ export default class Slider extends Component {
     }
 
     onMove(evt, gestureState) {
+        if (!this.props.enable) {
+            return ;
+        }
+
         const {moveX} = gestureState;
         const {max, value, step, xCurrent, xMin, xMax, width} = this.state;
 
@@ -88,13 +99,13 @@ export default class Slider extends Component {
                 xCurrent: moveX
             })
         }
-        else if (moveX < 0) {
+        else if (tmp < 0) {
             this.setState({
                 value: 0,
                 xCurrent: xMin
             })
         }
-        else if (moveX > xMax) {
+        else if (tmp > value) {
             this.setState({
                 value: max,
                 xCurrent: xMax
@@ -106,7 +117,7 @@ export default class Slider extends Component {
 
 
     render() {
-        const {style, header, color, scrollBarColor} = this.props;
+        const {enable, style, header, color, scrollBarColor} = this.props;
         const {xMax, value, step} = this.state;
         let leftWidth = Math.round(value / step);
 
@@ -121,15 +132,12 @@ export default class Slider extends Component {
                 <View style={styles.sliderView}>
 
                     <View style={[styles.scrollBar, {
-                        backgroundColor: color,
+                        backgroundColor: enable ? color : scrollBarColor,
                         width: leftWidth
-                    }]} />
+                        }]} />
 
-                    <TouchableHighlight >
-                        <View style={[styles.slider, {backgroundColor: color}]}
-                            {...this.panResponse.panHandlers}
-                        />
-                    </TouchableHighlight>
+                    <View style={[styles.slider, {backgroundColor: enable ? color : scrollBarColor}]}
+                        {...this.panResponse.panHandlers} />
 
                     <View style={[styles.scrollBar, {
                         backgroundColor: scrollBarColor,

@@ -64,13 +64,30 @@ export default class DemoTemplate extends Component {
     }
 
     renderFooter() {
+        let notePanel = null;
+        const {note} = this.props;
+        if (note) {
+            notePanel = (
+                <View>
+                    <Text style={styles.title}>NOTE</Text>
+
+                    <View style={styles.well}>
+                        <Text>{note}</Text>
+                    </View>
+                </View>
+            );
+        }
+
         return (
-            <Button text={'Go Back'}
-                    style={styles.backButton}
-                    onPress={() => {
-                            Router.goBack();
-                        }}
-            />
+            <View>
+                {notePanel}
+                <Button text={'Go Back'}
+                        style={styles.backButton}
+                        onPress={() => {
+                                Router.goBack();
+                            }}
+                />
+            </View>
         );
     }
 

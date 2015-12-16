@@ -10,13 +10,15 @@ export var styles = StyleSheet.create({
     },
 
     scrollContainer: {
-        padding: 10
+        padding: 10,
+        paddingTop: 0
     },
 
     title: {
         fontSize: GlobalFontSize.Subtitle,
         fontWeight: 'bold',
-        marginVertical: 5
+        marginVertical: 5,
+        marginTop: 15
     },
 
     well: {
