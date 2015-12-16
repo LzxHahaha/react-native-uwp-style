@@ -41,7 +41,8 @@ Pages.ActionIndex = {
     params: {
         pages: [
             {text: 'HyperLink', page: Pages.Hyperlink},
-            {text: 'Button', page: Pages.Button}
+            {text: 'Button', page: Pages.Button},
+            {text: 'Slider', page: Pages.Slider}
         ]
     }
 };

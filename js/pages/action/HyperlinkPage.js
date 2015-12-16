@@ -9,7 +9,7 @@ import {styles} from './../TestPage.style.js';
 import DemoTemplate from '../DemoTemplate';
 
 import NavPaneTitle from '../../components/NavPaneTitle';
-import Hyperlink from '../../components/Hyperlink';
+import Hyperlink from '../../components/actions/Hyperlink';
 import Field from '../../components/Field';
 
 export default class HyperlinkPage extends Component {

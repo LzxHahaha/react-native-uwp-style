@@ -6,8 +6,8 @@ import React, {
     View,
 } from 'react-native';
 
-import {styles} from './Hyperlink.style';
-import {GlobalColors, GlobalFontSize} from '../global.style';
+import {styles} from './Hyperlink.style.js';
+import {GlobalColors, GlobalFontSize} from '../../global.style.js';
 
 const propTypes = {
     enable: PropTypes.bool,

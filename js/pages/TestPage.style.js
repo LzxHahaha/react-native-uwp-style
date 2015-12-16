@@ -13,5 +13,9 @@ export var styles = StyleSheet.create({
 
     textbox: {
         margin: 10
+    },
+
+    slider: {
+        margin: 10
     }
 });

@@ -12,7 +12,7 @@ import {GlobalStyles} from '../global.style';
 import Router from '../Router';
 
 import NavPaneTitle from '../components/NavPaneTitle';
-import Button from '../components/Button';
+import Button from '../components/actions/Button';
 
 propTypes = {};
 

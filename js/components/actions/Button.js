@@ -6,8 +6,8 @@ import React, {
     View,
 } from 'react-native';
 
-import {styles} from './Button.style';
-import {GlobalColors, GlobalFontSize} from '../global.style';
+import {styles} from './Button.style.js';
+import {GlobalColors, GlobalFontSize} from '../../global.style.js';
 
 const propTypes = {
     enable: PropTypes.bool,
