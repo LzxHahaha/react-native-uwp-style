@@ -27,7 +27,7 @@ export default class Home extends Component {
                 <NavPaneTitle title={'RN-UWP DEMO'} />
                 <View style={styles.center}>
                     <Image source={require('../image/logo.png')} style={styles.icon} />
-                    <Text>Welcome to React Native!</Text>
+                    <Text style={styles.text}>Welcome to React Native!</Text>
                 </View>
             </View>
         );
