@@ -6,14 +6,17 @@ Some react-native's components with Windows 10 style. You can get the design tem
 
 ### Completed
 
-* [Hyperlink](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/Hyperlink.js)
-* [Button](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/Button.js)
-* [TextBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/TextBox.js)
-* [PasswordBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/PasswordBox.js)
-* [NavPane](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/NavPane.js)
+* Actions
+    * [Hyperlink](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/Hyperlink.js)
+    * [Button](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/Button.js)
+    * [Slider](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/Slider.js)
+* Input fields
+    * [TextBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/TextBox.js)
+    * [PasswordBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/PasswordBox.js)
+* Navigation
+    * [NavPane](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/NavPane.js)
 
 ### TODO
-* Slider
 * ComboBox
 * DatePicker
     * DatePicker
