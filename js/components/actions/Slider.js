@@ -36,9 +36,10 @@ export default class Slider extends Component {
             max: max,
             value: value,
             step: 0,
-            xMin: 0,
+            xMin: null,
             xCurrent: 0,
-            xMax: 0
+            xMax: null,
+            width: 0
         };
     }
 
@@ -47,28 +48,39 @@ export default class Slider extends Component {
         onMoveShouldSetPanResponder: () => true,
 
         onPanResponderGrant: (evt, gestureState) => {
+            const {value, step, xMin, xCurrent, width} = this.state;
+            if (xMin == null) {
+                let min = gestureState.x0 - xCurrent;
+                this.setState({
+                    xCurrent: gestureState.x0,
+                    xMin: min,
+                    xMax: width + min
+                })
+            }
         },
         onPanResponderMove: (evt, gestureState) => this.onMove(evt, gestureState)
     });
 
     onLayout(e) {
-        const {x, width} = e.nativeEvent.layout;
+        const {width} = e.nativeEvent.layout;
         const {max, value} = this.props;
 
         let step = max / (width - sliderWidth);
+        let current = Math.round(value / step);
+
         this.setState({
-            xMin: x,
-            xMax: width - sliderWidth,
-            xCurrent: step * value + x,
+            xCurrent: current,
+            xMax: width,
+            width: width,
             step: step
         });
     }
 
     onMove(evt, gestureState) {
-        const {moveX, x0} = gestureState;
-        const {max, value, step, xCurrent} = this.state;
+        const {moveX} = gestureState;
+        const {max, value, step, xCurrent, xMin, xMax, width} = this.state;
 
-        let tmp = Math.round((moveX - xCurrent) * step + value);
+        let tmp = Math.round((moveX - xCurrent) * step) + value;
 
         if (0 <= tmp && tmp <= max) {
             this.setState({
@@ -76,44 +88,52 @@ export default class Slider extends Component {
                 xCurrent: moveX
             })
         }
-        else if (tmp < 0) {
+        else if (moveX < 0) {
             this.setState({
                 value: 0,
-                xCurrent: moveX
+                xCurrent: xMin
             })
         }
-        else {
+        else if (moveX > xMax) {
             this.setState({
                 value: max,
-                xCurrent: moveX
+                xCurrent: xMax
             })
         }
+
+        this.props.onMove && this.props.onMove(this.state.value);
     }
 
 
     render() {
-        const {style, color, scrollBarColor} = this.props;
-        const {xCurrent, xMin, xMax, value, step, max} = this.state;
+        const {style, header, color, scrollBarColor} = this.props;
+        const {xMax, value, step} = this.state;
+        let leftWidth = Math.round(value / step);
 
         return (
             <View style={[styles.container, style]}
                   onLayout={(e) => this.onLayout(e)}>
-                <Text>value: {value}</Text>
+                {
+                    header &&
+                    <Text style={styles.header}>{header}</Text>
+                }
 
                 <View style={styles.sliderView}>
 
                     <View style={[styles.scrollBar, {
                         backgroundColor: color,
-                        width: value / step
+                        width: leftWidth
                     }]} />
 
-                    <View style={[styles.slider, {backgroundColor: color}]}
-                        {...this.panResponse.panHandlers}
-                    />
+                    <TouchableHighlight >
+                        <View style={[styles.slider, {backgroundColor: color}]}
+                            {...this.panResponse.panHandlers}
+                        />
+                    </TouchableHighlight>
 
                     <View style={[styles.scrollBar, {
                         backgroundColor: scrollBarColor,
-                        width: (max - value) / step
+                        width: xMax - leftWidth
                     }]} />
                 </View>
             </View>

@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalColors} from '../../global.style.js';
+import {GlobalColors, GlobalFontSize} from '../../global.style.js';
 
 export var sliderWidth = 10;
 
@@ -13,6 +13,12 @@ export var styles = StyleSheet.create({
     sliderView: {
         flexDirection: 'row',
         alignItems: 'center'
+    },
+
+    header: {
+        color: 'black',
+        fontSize: GlobalFontSize.Base,
+        marginBottom: 5
     },
 
     slider: {
