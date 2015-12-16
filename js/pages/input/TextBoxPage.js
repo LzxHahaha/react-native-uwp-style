@@ -4,30 +4,42 @@ import React, {
     Text
 } from 'react-native';
 
-import TextBox from '../../components/TextBox';
-import PasswordBox from '../../components/PasswordBox';
-import Close from '../../symbols/Close';
-
 import {styles} from './../TestPage.style.js';
+
+import DemoTemplate from '../../pages/DemoTemplate';
+
+import TextBox from '../../components/input/TextBox';
+import PasswordBox from '../../components/input/PasswordBox';
+import Close from '../../symbols/Close';
 
 export default class ButtonPage extends Component {
     constructor(props) {
         super(props);
 
+        let document = [
+            {name: 'autoFocus', type: 'bool', description: ''},
+            {name: 'editable', type: 'bool', description: ''},
+            {name: 'hideClear', type: 'bool', description: 'Hide the clear button when lose focus or not'},
+            {name: 'header', type: 'string', description: ''},
+            {name: 'highlightColor', type: 'string', description: ''},
+            {name: 'onBlur', type: 'function', description: ''},
+            {name: 'onChangeText', type: 'function', description: ''},
+            {name: 'onFocus', type: 'function', description: ''}
+        ];
+
         this.state = {
+            document: document,
             test: ''
         };
     }
 
     render() {
         return (
-            <View style={styles.container}>
+            <DemoTemplate title={'BUTTON DEMO'} document={this.state.document}>
                 <TextBox style={styles.textbox} placeholder={'text'} />
                 <TextBox style={styles.textbox} placeholder={'text'} header={'header'} />
                 <TextBox style={styles.textbox} placeholder={'text'} header={'uneditable'}
                          editable={false} value='lala' />
-
-                <PasswordBox style={styles.textbox} header={'Password'} placeholder={'Password'} />
 
                 <TextBox style={styles.textbox} placeholder={'text'} header={'AutoFocus'}
                          autoFocus={false}
@@ -36,7 +48,7 @@ export default class ButtonPage extends Component {
                          }} />
 
                 <Text>  AutoFocus Box's Text: {this.state.test}</Text>
-            </View>
+            </DemoTemplate>
         )
     }
 

@@ -7,14 +7,16 @@ import React, {
     View
 } from 'react-native';
 
-import {styles} from './TextBox.style';
-import {GlobalColors, GlobalStyles} from '../global.style';
+import {styles} from './TextBox.style.js';
+import {GlobalColors, GlobalStyles} from '../../global.style.js';
 
-import Close from '../symbols/Close';
+import Close from '../../symbols/Close';
 
 const propTypes = {
+    autoFocus: PropTypes.bool,
     editable: PropTypes.bool,
     hideClear: PropTypes.bool,
+    header: PropTypes.string,
     highlightColor: PropTypes.string,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func
@@ -23,8 +25,8 @@ const propTypes = {
 const defaultProps = {
     editable: true,
     hideClear: true,
-    highlightColor: GlobalColors.blue,
-}
+    highlightColor: GlobalColors.blue
+};
 
 export default class TextBox extends Component {
     constructor(props) {
@@ -43,21 +45,21 @@ export default class TextBox extends Component {
 
     onChangeText(text) {
         this.setState({value: text});
-        this.props.onChangeText(text);
+        this.props.onChangeText &&  this.props.onChangeText(text);
     }
 
     onFocus() {
         if (this.props.editable) {
             this.setState({focus: true});
         }
-        this.props.onFocus();
+        this.props.onFocus && this.props.onFocus();
     }
 
     onBlur() {
         if (this.props.editable) {
             this.setState({focus: false});
         }
-        this.props.onBlur();
+        this.props.onBlur && this.props.onBlur();
     }
 
     render() {

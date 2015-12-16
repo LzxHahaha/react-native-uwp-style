@@ -25,12 +25,12 @@ export default class UWP extends Component {
 
         let buttons = [
             {text: 'ACTIONS', onPress: () => {Router.goto(Pages.ActionIndex)}},
-            {text: 'DROP-DOWNS', onPress: () => {}},
-            {text: 'INPUT FIELDS', onPress: () => {}},
-            {text: 'NAVIGATION', onPress: () => {}},
-            {text: 'OVERLAYS', onPress: () => {}},
-            {text: 'PROGRESS', onPress: () => {}},
-            {text: 'TOGGLES', onPress: () => {}}
+            //{text: 'DROP-DOWNS', onPress: () => {}},
+            {text: 'INPUT FIELDS', onPress: () => {Router.goto(Pages.InputIndex)}} //,
+            //{text: 'NAVIGATION', onPress: () => {}},
+            //{text: 'OVERLAYS', onPress: () => {}},
+            //{text: 'PROGRESS', onPress: () => {}},
+            //{text: 'TOGGLES', onPress: () => {}}
         ];
 
         this.state = {

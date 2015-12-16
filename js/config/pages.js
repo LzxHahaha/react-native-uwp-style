@@ -30,11 +30,6 @@ Pages.Slider = {
     name: 'Slider Demo'
 };
 
-Pages.TextBox = {
-    component: TextBoxPage,
-    name: 'TextBox Demo'
-};
-
 Pages.ActionIndex = {
     component:   PageIndex,
     name: 'ACTIONS',
@@ -43,6 +38,21 @@ Pages.ActionIndex = {
             {text: 'HyperLink', page: Pages.Hyperlink},
             {text: 'Button', page: Pages.Button},
             {text: 'Slider', page: Pages.Slider}
+        ]
+    }
+};
+
+Pages.TextBox = {
+    component: TextBoxPage,
+    name: 'TextBox Demo'
+};
+
+Pages.InputIndex = {
+    component:   PageIndex,
+    name: 'INPUT FIELDS',
+    params: {
+        pages: [
+            {text: 'TextBox', page: Pages.TextBox}
         ]
     }
 };
