@@ -73,7 +73,7 @@ Pages.NavPane = {
 
 Pages.NavigatorIndex = {
     component: PageIndex,
-    name: 'NAVIGATOR FIELDS',
+    name: 'NAVIGATOR',
     params: {
         pages: [
             {text: 'NavPane', page: Pages.NavPane}
