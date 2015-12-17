@@ -7,8 +7,7 @@ import {GlobalColors, GlobalFontSize} from '../global.style';
 export var styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        alignItems: 'center',
-        marginHorizontal: 10
+        alignItems: 'center'
     },
 
     header: {

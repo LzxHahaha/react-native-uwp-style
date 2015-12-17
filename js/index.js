@@ -6,6 +6,7 @@ import React, {
     ListView,
     Navigator,
     Image,
+    Platform,
     BackAndroid
 } from 'react-native';
 
@@ -29,7 +30,7 @@ export default class UWP extends Component {
             {text: 'INPUT FIELDS', onPress: () => {Router.goto(Pages.InputIndex)}},
             {text: 'NAVIGATION', onPress: () => {Router.goto(Pages.NavigatorIndex)}},
             //{text: 'OVERLAYS', onPress: () => {}},
-            //{text: 'PROGRESS', onPress: () => {}},
+            {text: 'PROGRESS', onPress: () => {Router.goto(Pages.ProgressIndex)}},
             {text: 'TOGGLES', onPress: () => {Router.goto(Pages.ToggleIndex)}}
         ];
 
@@ -47,7 +48,9 @@ export default class UWP extends Component {
     }
 }
 
-BackAndroid.addEventListener('hardwareBackPress', function() {
-    Router.goBack();
-    return true;
-});
+if (Platform.OS === 'android') {
+    BackAndroid.addEventListener('hardwareBackPress', function () {
+        Router.goBack();
+        return true;
+    });
+}

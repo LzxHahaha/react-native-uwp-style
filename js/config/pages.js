@@ -11,6 +11,8 @@ import PasswordBoxPage from '../pages/input/PasswordBoxPage';
 
 import NavPanePage from '../pages/navigation/NavPanPage';
 
+import ProgressPage from '../pages/progress/ProgressBarPage';
+
 import CheckBoxPage from '../pages/toggle/CheckBoxPage';
 import RadioButtonPage from '../pages/toggle/RadioButtonPage';
 import RadioGroupPage from '../pages/toggle/RadioGroupPage';
@@ -85,6 +87,22 @@ Pages.NavigatorIndex = {
         ]
     }
 };
+
+Pages.Progress = {
+    component: ProgressPage,
+    name: 'Progress Demo'
+};
+
+Pages.ProgressIndex = {
+    component: PageIndex,
+    name: 'PROGRESS',
+    params: {
+        pages: [
+            {text: 'ProgressBar', page: Pages.Progress}
+        ]
+    }
+};
+
 
 Pages.ChechBox = {
     component: CheckBoxPage,

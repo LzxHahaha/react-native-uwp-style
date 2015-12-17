@@ -9,6 +9,8 @@ import React, {
 import {styles} from './PagesIndex.style.js';
 import {GlobalStyles} from '../global.style';
 
+import Pages from '../config/pages';
+
 import Router from '../Router';
 import NavPaneTitle from '../components/navigator/NavPaneTitle';
 import Button from '../components/action/Button';
@@ -53,7 +55,7 @@ export default class PagesIndex extends Component {
             <View>
                 <Button text={'Go Back'} style={styles.button}
                         onPress={() => {
-                            Router.goBack();
+                            Router.goto(Pages.Home);
                         }} />
             </View>
         );
