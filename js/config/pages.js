@@ -68,7 +68,7 @@ Pages.InputIndex = {
 
 Pages.NavPane = {
     component: NavPanePage,
-    name: 'NAV PANE DEMO'
+    name: 'NavPane Demo'
 };
 
 Pages.NavigatorIndex = {

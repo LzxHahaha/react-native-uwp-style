@@ -16,7 +16,7 @@ export default class PasswordBoxPage extends Component {
         let document = [
             {name: 'autoFocus', type: 'bool', description: ''},
             {name: 'editable', type: 'bool', description: ''},
-            {name: 'hideClear', type: 'bool', description: 'Hide the clear button when lose focus or not'},
+            {name: 'hideClear', type: 'bool', description: 'Hide the clear button when lose focus.'},
             {name: 'header', type: 'string', description: ''},
             {name: 'highlightColor', type: 'string', description: ''},
             {name: 'onBlur', type: 'function', description: ''},
