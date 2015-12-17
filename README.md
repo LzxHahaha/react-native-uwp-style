@@ -9,14 +9,18 @@ Some react-native's components with Windows 10 style. You can get the design tem
 ### Completed
 
 * Actions
-    * [Hyperlink](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/Hyperlink.js)
-    * [Button](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/Button.js)
-    * [Slider](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/Slider.js)
+    * [Hyperlink](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/action/Hyperlink.js)
+    * [Button](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/action/Button.js)
+    * [Slider](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/action/Slider.js)
 * Input fields
-    * [TextBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/TextBox.js)
-    * [PasswordBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/PasswordBox.js)
+    * [TextBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/input/TextBox.js)
+    * [PasswordBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/input/PasswordBox.js)
 * Navigation
-    * [NavPane](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/NavPane.js)
+    * [NavPane](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/navigator/NavPane.js)
+* Toggle
+    * [CheckBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/toggle/CheckBox.js)
+    * [RadioButton](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/toggle/RadioButton.js)
+    * [ToggleSwitch](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/toggle/ToggleSwitch.js)
 
 ### TODO
 * ComboBox
@@ -29,9 +33,6 @@ Some react-native's components with Windows 10 style. You can get the design tem
 * Dialog
 * Flyout
 * ProgressBar
-* CheckBox
-* RadioButton
-* ToogleSwitch
 * Hub
 * Tabs
 * Pivot
