@@ -2,6 +2,12 @@
 
 ![Demo](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/demo_image/demo.gif)
 
+### Installation
+
+```
+$ npm install
+```
+
 ### About
 
 Some react-native's components with Windows 10 style. You can get the design templates at [Windows Dev Center](https://dev.windows.com/en-us/design/assets).
