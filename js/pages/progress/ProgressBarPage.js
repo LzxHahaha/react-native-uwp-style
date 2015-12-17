@@ -19,7 +19,7 @@ export default class ProgressPage extends Component {
             {name: 'backgroundColor', type: 'string', description: ''},
             {name: 'color', type: 'string', description: ''},
             {name: 'max', type: 'number', description: ''},
-            {name: 'onChangeText', type: 'function', description: ''},
+            {name: 'onchangeValue', type: 'function', description: ''},
             {name: 'value', type: 'number', description: ''}
         ];
 

@@ -5,7 +5,7 @@
 ### Installation
 
 ```
-$ npm install
+$ cd UWP && npm install
 ```
 
 ### About
@@ -23,6 +23,8 @@ Some react-native's components with Windows 10 style. You can get the design tem
     * [PasswordBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/input/PasswordBox.js)
 * Navigation
     * [NavPane](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/navigator/NavPane.js)
+* Progress
+    * [ProgressBar](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/progress/ProgressBar.js)
 * Toggle
     * [CheckBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/toggle/CheckBox.js)
     * [RadioButton](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/toggle/RadioButton.js)
@@ -38,7 +40,6 @@ Some react-native's components with Windows 10 style. You can get the design tem
 * CommandBox
 * Dialog
 * Flyout
-* ProgressBar
 * Hub
 * Tabs
 * Pivot
