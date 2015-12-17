@@ -8,7 +8,7 @@ import {styles} from './../TestPage.style.js';
 
 import DemoTemplate from '../DemoTemplate';
 
-import Slider from '../../components/actions/Slider';
+import Slider from '../../components/action/Slider';
 import Field from '../../components/Field';
 
 export default class ButtonPage extends Component {

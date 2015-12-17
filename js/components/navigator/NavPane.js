@@ -12,7 +12,7 @@ import React, {
 import {styles} from './NavPane.style.js';
 import {GlobalColors} from '../../global.style.js';
 
-import Button from './../actions/Button';
+import Button from '../action/Button';
 
 import Hamburger from '../../symbols/Hamburger';
 

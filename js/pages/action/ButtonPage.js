@@ -7,7 +7,7 @@ import React, {
 import {styles} from './../TestPage.style.js';
 
 import DemoTemplate from '../DemoTemplate';
-import Button from '../../components/actions/Button';
+import Button from '../../components/action/Button';
 import Field from '../../components/Field';
 
 export default class ButtonPage extends Component {
