@@ -10,11 +10,11 @@ import React, {
 } from 'react-native';
 
 import {styles} from './NavPane.style.js';
-import {GlobalColors} from '../global.style';
+import {GlobalColors} from '../../global.style.js';
 
-import Button from './actions/Button';
+import Button from './../actions/Button';
 
-import Hamburger from '../symbols/Hamburger';
+import Hamburger from '../../symbols/Hamburger';
 
 propTypes = {
     paneWidth: PropTypes.number
@@ -28,13 +28,17 @@ export default class NavPane extends Component {
     constructor(props) {
         super(props);
 
+        if (NavPane.instance == null) {
+            NavPane.instance = this;
+            NavPane.jumpCount = 0;
+        }
+
         let dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2 });
 
         this.state = {
             isPaneOpen: false,
             width: new Animated.Value(0.1),
-            buttons: dataSource.cloneWithRows(this.props.buttons),
-            title: this.props.initialName
+            buttons: dataSource.cloneWithRows(this.props.buttons)
         };
     }
 
@@ -73,12 +77,17 @@ export default class NavPane extends Component {
             });
         }
         else {
-            width.setValue(paneWidth + 10);
-            Animated.spring(width, {
-                toValue: paneWidth,
-                tension: 10,
-                friction: 2
-            }).start();
+            Animated.sequence([
+                Animated.timing(width, {
+                    toValue: paneWidth + 10,
+                    duration: 150
+                }),
+                Animated.spring(width, {
+                    toValue: paneWidth,
+                    tension: 10,
+                    friction: 2
+                })
+            ]).start();
             this.setState({
                 isPaneOpen: true
             });
@@ -118,9 +127,6 @@ export default class NavPane extends Component {
     }
 
     render() {
-        NavPane.instance = this;
-        NavPane.jumpCount = 0;
-
         const {initialRoute} = this.props;
 
         return (
