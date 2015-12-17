@@ -11,6 +11,10 @@ import PasswordBoxPage from '../pages/input/PasswordBoxPage';
 
 import NavPanePage from '../pages/navigation/NavPanPage';
 
+import CheckBoxPage from '../pages/toggle/CheckBoxPage';
+import RadioButtonPage from '../pages/toggle/RadioButtonPage';
+import RadioGroupPage from '../pages/toggle/RadioGroupPage';
+
 export default class Pages {}
 
 Pages.Home = {
@@ -77,6 +81,33 @@ Pages.NavigatorIndex = {
     params: {
         pages: [
             {text: 'NavPane', page: Pages.NavPane}
+        ]
+    }
+};
+
+Pages.ChechBox = {
+    component: CheckBoxPage,
+    name: 'CheckBox Demo'
+};
+
+Pages.RadioButton = {
+    component: RadioButtonPage,
+    name: 'Radio Button Demo'
+};
+
+Pages.RadioGroup = {
+    component: RadioGroupPage,
+    name: 'Radio Group Demo'
+};
+
+Pages.ToggleIndex = {
+    component: PageIndex,
+    name: 'TOGGLES',
+    params: {
+        pages: [
+            {text: 'CheckBox', page: Pages.ChechBox},
+            {text: 'RadioButton', page: Pages.RadioButton},
+            {text: 'RadioGroup', page: Pages.RadioGroup}
         ]
     }
 };
