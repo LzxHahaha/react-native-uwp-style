@@ -14,6 +14,7 @@ import NavPanePage from '../pages/navigation/NavPanPage';
 import CheckBoxPage from '../pages/toggle/CheckBoxPage';
 import RadioButtonPage from '../pages/toggle/RadioButtonPage';
 import RadioGroupPage from '../pages/toggle/RadioGroupPage';
+import ToggleSwitchPage from '../pages/toggle/ToggleSwitchPage';
 
 export default class Pages {}
 
@@ -100,6 +101,11 @@ Pages.RadioGroup = {
     name: 'Radio Group Demo'
 };
 
+Pages.ToggleSwitch = {
+    component: ToggleSwitchPage,
+    name: 'Radio Group Demo'
+};
+
 Pages.ToggleIndex = {
     component: PageIndex,
     name: 'TOGGLES',
@@ -107,7 +113,8 @@ Pages.ToggleIndex = {
         pages: [
             {text: 'CheckBox', page: Pages.ChechBox},
             {text: 'RadioButton', page: Pages.RadioButton},
-            {text: 'RadioGroup', page: Pages.RadioGroup}
+            {text: 'RadioGroup', page: Pages.RadioGroup},
+            {text: 'ToggleSwitch', page: Pages.ToggleSwitch}
         ]
     }
 };
