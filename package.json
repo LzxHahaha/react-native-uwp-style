@@ -6,6 +6,7 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "mkdir": "0.0.2",
     "react-native": "^0.16.0",
     "react-native-router": "^0.2.1"
   }
