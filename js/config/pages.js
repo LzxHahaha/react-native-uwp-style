@@ -7,6 +7,9 @@ import ButtonPage from '../pages/action/ButtonPage';
 import SliderPage from '../pages/action/SliderPage';
 
 import TextBoxPage from '../pages/input/TextBoxPage';
+import PasswordBoxPage from '../pages/input/PasswordBoxPage';
+
+import NavPanePage from '../pages/navigation/NavPanPage';
 
 export default class Pages {}
 
@@ -47,12 +50,33 @@ Pages.TextBox = {
     name: 'TextBox Demo'
 };
 
+Pages.PasswordBox = {
+    component: PasswordBoxPage,
+    name: 'PasswordBox Demo'
+};
+
 Pages.InputIndex = {
-    component:   PageIndex,
+    component: PageIndex,
     name: 'INPUT FIELDS',
     params: {
         pages: [
-            {text: 'TextBox', page: Pages.TextBox}
+            {text: 'TextBox', page: Pages.TextBox},
+            {text: 'PasswordBox', page: Pages.PasswordBox}
+        ]
+    }
+};
+
+Pages.NavPane = {
+    component: NavPanePage,
+    name: 'NAV PANE DEMO'
+};
+
+Pages.NavigatorIndex = {
+    component: PageIndex,
+    name: 'NAVIGATOR FIELDS',
+    params: {
+        pages: [
+            {text: 'NavPane', page: Pages.NavPane}
         ]
     }
 };

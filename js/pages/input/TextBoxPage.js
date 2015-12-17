@@ -9,8 +9,6 @@ import {styles} from './../TestPage.style.js';
 import DemoTemplate from '../../pages/DemoTemplate';
 
 import TextBox from '../../components/input/TextBox';
-import PasswordBox from '../../components/input/PasswordBox';
-import Close from '../../symbols/Close';
 
 export default class ButtonPage extends Component {
     constructor(props) {
@@ -19,7 +17,7 @@ export default class ButtonPage extends Component {
         let document = [
             {name: 'autoFocus', type: 'bool', description: ''},
             {name: 'editable', type: 'bool', description: ''},
-            {name: 'hideClear', type: 'bool', description: 'Hide the clear button when lose focus or not'},
+            {name: 'hideClear', type: 'bool', description: 'Hide the clear button when lose focus.'},
             {name: 'header', type: 'string', description: ''},
             {name: 'highlightColor', type: 'string', description: ''},
             {name: 'onBlur', type: 'function', description: ''},
@@ -27,22 +25,25 @@ export default class ButtonPage extends Component {
             {name: 'onFocus', type: 'function', description: ''}
         ];
 
+        let note = 'If you put it in a ListView, you should set the "hideClear" property to false.';
+
         this.state = {
             document: document,
+            note: note,
             test: ''
         };
     }
 
     render() {
         return (
-            <DemoTemplate title={'BUTTON DEMO'} document={this.state.document}>
-                <TextBox style={styles.textbox} placeholder={'text'} />
-                <TextBox style={styles.textbox} placeholder={'text'} header={'header'} />
+            <DemoTemplate title={'TEXT BOX DEMO'} document={this.state.document} note={this.state.note}>
+                <TextBox style={styles.textbox} placeholder={'text'} hideClear={false} />
+                <TextBox style={styles.textbox} placeholder={'text'} header={'header'} hideClear={false} />
                 <TextBox style={styles.textbox} placeholder={'text'} header={'uneditable'}
-                         editable={false} value='lala' />
+                         editable={false} value='lala' hideClear={false} />
 
                 <TextBox style={styles.textbox} placeholder={'text'} header={'AutoFocus'}
-                         autoFocus={false}
+                         autoFocus={true} hideClear={false}
                          onChangeText={(text) => {
                             this.setState({test: text})
                          }} />

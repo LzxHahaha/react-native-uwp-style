@@ -7,7 +7,7 @@ import React, {
 
 import {styles} from './Home.style.js';
 
-import NavPaneTitle from '../components/NavPaneTitle';
+import NavPaneTitle from '../components/navigator/NavPaneTitle';
 
 export default class Home extends Component {
     constructor(props) {

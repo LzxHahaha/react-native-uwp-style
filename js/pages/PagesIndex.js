@@ -10,7 +10,7 @@ import {styles} from './PagesIndex.style.js';
 import {GlobalStyles} from '../global.style';
 
 import Router from '../Router';
-import NavPaneTitle from '../components/NavPaneTitle';
+import NavPaneTitle from '../components/navigator/NavPaneTitle';
 import Button from '../components/actions/Button';
 
 export default class PagesIndex extends Component {

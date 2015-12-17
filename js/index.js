@@ -11,8 +11,8 @@ import React, {
 
 import {styles} from './index.style';
 
-import NavPane from './components/NavPane';
-import NavPaneTitle from './components/NavPaneTitle';
+import NavPane from './components/navigator/NavPane';
+import NavPaneTitle from './components/navigator/NavPaneTitle';
 import Router from './Router';
 
 import Pages from './config/pages';
@@ -26,8 +26,8 @@ export default class UWP extends Component {
         let buttons = [
             {text: 'ACTIONS', onPress: () => {Router.goto(Pages.ActionIndex)}},
             //{text: 'DROP-DOWNS', onPress: () => {}},
-            {text: 'INPUT FIELDS', onPress: () => {Router.goto(Pages.InputIndex)}} //,
-            //{text: 'NAVIGATION', onPress: () => {}},
+            {text: 'INPUT FIELDS', onPress: () => {Router.goto(Pages.InputIndex)}},
+            {text: 'NAVIGATION', onPress: () => {Router.goto(Pages.NavigatorIndex)}} //,
             //{text: 'OVERLAYS', onPress: () => {}},
             //{text: 'PROGRESS', onPress: () => {}},
             //{text: 'TOGGLES', onPress: () => {}}

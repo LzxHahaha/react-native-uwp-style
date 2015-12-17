@@ -8,7 +8,7 @@ import {styles} from './../TestPage.style.js';
 
 import DemoTemplate from '../DemoTemplate';
 
-import NavPaneTitle from '../../components/NavPaneTitle';
+import NavPaneTitle from '../../components/navigator/NavPaneTitle';
 import Hyperlink from '../../components/actions/Hyperlink';
 import Field from '../../components/Field';
 
