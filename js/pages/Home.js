@@ -18,8 +18,15 @@ export default class Home extends Component {
         let buttons = [
             {text: 'Share', icon: require('../image/share.png')}
         ];
+        let sub = [
+            {text: 'item'},
+            {text: 'item'},
+            {text: 'item'}
+        ];
+
         this.state = {
-            commandButtons: buttons
+            commandButtons: buttons,
+            subList: sub
         };
     }
 
@@ -36,7 +43,7 @@ export default class Home extends Component {
                     <Text style={styles.text}>Welcome to React Native!</Text>
                 </View>
 
-                <CommandBar barButtons={this.state.commandButtons} />
+                <CommandBar barButtons={this.state.commandButtons} subList={this.state.subList} />
             </View>
         );
     }

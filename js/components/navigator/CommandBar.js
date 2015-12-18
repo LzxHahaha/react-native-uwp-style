@@ -5,6 +5,7 @@ import React, {
     Text,
     TouchableOpacity,
     View,
+    ListView,
     Image
 } from 'react-native';
 
@@ -19,21 +20,38 @@ export default class CommandBar extends Component {
     constructor(props) {
         super(props);
 
+        const {subList} = this.props;
+
+        let dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => {}});
+        let height = 0;
+        let maxHeight = 0;
+        if (subList) {
+            height = subList.length * 45;
+            maxHeight = height > 155 ? 155  : height;
+        }
+
         this.state = {
             isOpen: false,
             barHeight: new Animated.Value(50),
-            textOpacity: new Animated.Value(0)
+            textOpacity: new Animated.Value(0),
+            subListSource: dataSource.cloneWithRows(subList ? subList : []),
+            listHeight: new Animated.Value(0.1),
+            listMaxHeight: maxHeight
         };
     }
 
     toggle() {
-        const {isOpen, barHeight, textOpacity} = this.state;
+        const {isOpen, barHeight, listHeight, listMaxHeight, textOpacity} = this.state;
         let needOpen = !isOpen;
 
         if (needOpen) {
             Animated.parallel([
                 Animated.timing(barHeight, {
-                    toValue: 65,
+                    toValue: 65 + listMaxHeight,
+                    duration: 300
+                }),
+                Animated.timing(listHeight, {
+                    toValue: listMaxHeight,
                     duration: 300
                 }),
                 Animated.timing(textOpacity, {
@@ -48,6 +66,10 @@ export default class CommandBar extends Component {
                     toValue: 50,
                     duration: 300
                 }),
+                Animated.timing(listHeight, {
+                    toValue: 0.1,
+                    duration: 300
+                }),
                 Animated.timing(textOpacity, {
                     toValue: 0,
                     duration: 50
@@ -56,6 +78,34 @@ export default class CommandBar extends Component {
         }
 
         this.setState({isOpen: needOpen});
+    }
+
+    renderSubList() {
+        const {subList} = this.props;
+
+        let list = null;
+
+        if (subList) {
+            list = (
+                <Animated.View style={[{height: this.state.listHeight}]}>
+                    <ListView
+                        style={styles.subList}
+                        dataSource={this.state.subListSource}
+                        renderRow={(rowData) => {
+                            return (
+                                <TouchableOpacity onPress={rowData.onPress && rowData.onPress()}>
+                                    <View style={styles.rowItem}>
+                                        <Text style={styles.rowItemText}>{rowData.text}</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            )
+                        }}
+                    />
+                </Animated.View>
+            );
+        }
+
+        return list;
     }
 
     renderButtons() {
@@ -103,7 +153,10 @@ export default class CommandBar extends Component {
 
         return (
             <Animated.View style={[styles.container, {height: this.state.barHeight}]}>
-                {this.renderButtons()}
+                {this.renderSubList()}
+                <View style={[styles.bar]}>
+                    {this.renderButtons()}
+                </View>
             </Animated.View>
         );
     }

@@ -10,6 +10,9 @@ export var styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0,
+    },
+
+    bar: {
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'flex-end',
@@ -56,5 +59,19 @@ export var styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginTop: -20
+    },
+
+    subList: {
+        backgroundColor: '#f1f1f1',
+        flex: 1
+    },
+
+    rowItem: {
+        paddingVertical: 15,
+        paddingHorizontal: 10
+    },
+
+    rowItemText: {
+        color: 'black'
     }
 });
