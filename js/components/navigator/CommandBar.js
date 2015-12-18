@@ -78,7 +78,7 @@ export default class CommandBar extends Component {
                                     (<Image source={icon} style={styles.icon}/>)
                                 }
                             </View>
-                            <Animated.Text style={[styles.iconText, {opacity: this.state.textOpacity}]}>
+                            <Animated.Text numberOfLines={1} style={[styles.iconText, {opacity: this.state.textOpacity}]}>
                                 {text}
                             </Animated.Text>
                         </View>

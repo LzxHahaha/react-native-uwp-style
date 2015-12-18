@@ -8,12 +8,18 @@ import React, {
 import {styles} from './Home.style.js';
 
 import NavPaneTitle from '../components/navigator/NavPaneTitle';
+import CommandBar from '../components/navigator/CommandBar';
 
 export default class Home extends Component {
     constructor(props) {
         super(props);
 
+
+        let buttons = [
+            {text: 'Share', icon: require('../image/share.png')}
+        ];
         this.state = {
+            commandButtons: buttons
         };
     }
 
@@ -29,6 +35,8 @@ export default class Home extends Component {
                     <Image source={require('../image/logo.png')} style={styles.icon} />
                     <Text style={styles.text}>Welcome to React Native!</Text>
                 </View>
+
+                <CommandBar barButtons={this.state.commandButtons} />
             </View>
         );
     }
