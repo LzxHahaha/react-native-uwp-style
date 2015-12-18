@@ -70,7 +70,7 @@ export default class CommandBar extends Component {
                 const {icon, text, onPress} = barButtons[i];
 
                 buttons.push(
-                    <TouchableOpacity onPress={onPress && onPress()}>
+                    <TouchableOpacity onPress={onPress && onPress()} key={i}>
                         <View style={styles.iconButton}>
                             <View style={styles.iconView}>
                                 {
@@ -88,7 +88,7 @@ export default class CommandBar extends Component {
         }
 
         buttons.push(
-            <TouchableOpacity onPress={this.toggle.bind(this)}>
+            <TouchableOpacity onPress={this.toggle.bind(this)} key={'more'}>
                 <View style={[styles.moreButton]}>
                     <Text style={styles.moreText}>. . .</Text>
                 </View>
