@@ -2,18 +2,27 @@
 
 ![Demo](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/demo_image/demo.gif)
 
-### Installation
-
-```
-$ cd UWP && npm install
-```
-
-### About
+## About
 
 Some react-native's components with Windows 10 style. You can get the design templates at [Windows Dev Center](https://dev.windows.com/en-us/design/assets).
 
-### Completed
+> **Watch out:** this project are only tested on android before. If you want use it on iOS, you should test it by yourself (Because I don't have a Mac).
+## How to use
 
+### Get demo app (Like the UIExplorer)
+```
+$ npm install
+$ react-native start
+$ react-native run-android
+```
+
+### Use the components
+> Copy the **js/components** and **js/config** and **js/Router** to your project.
+
+## Completed Components
+
+* Icons
+    * [Icons](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/symbols/Icons.js)
 * Actions
     * [Hyperlink](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/action/Hyperlink.js)
     * [Button](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/action/Button.js)
@@ -23,6 +32,7 @@ Some react-native's components with Windows 10 style. You can get the design tem
     * [PasswordBox](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/input/PasswordBox.js)
 * Navigation
     * [NavPane](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/navigator/NavPane.js)
+    * [CommandBar](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/navigator/CommandBar.js)
 * Progress
     * [ProgressBar](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/progress/ProgressBar.js)
 * Toggle
@@ -30,14 +40,13 @@ Some react-native's components with Windows 10 style. You can get the design tem
     * [RadioButton](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/toggle/RadioButton.js)
     * [ToggleSwitch](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/toggle/ToggleSwitch.js)
 
-### TODO
+## TODO
 * ComboBox
 * DatePicker
     * DatePicker
     * CalebdarPicker
     * TimePicker
 * AutoSuggest
-* CommandBox
 * Dialog
 * Flyout
 * Hub
