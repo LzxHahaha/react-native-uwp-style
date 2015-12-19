@@ -4,28 +4,31 @@ import React, {
     Text,
     TextInput,
     TouchableOpacity,
-    View
+    View,
+    Image
 } from 'react-native';
 
 import {styles} from './TextBox.style.js';
 import {GlobalColors, GlobalStyles} from '../../global.style.js';
 
-import Close from '../symbols/Close';
+import * as Icons from '../symbols/Icons';
 
 const propTypes = {
     autoFocus: PropTypes.bool,
     editable: PropTypes.bool,
-    hideClear: PropTypes.bool,
+    hideIconButton: PropTypes.bool,
     header: PropTypes.string,
     highlightColor: PropTypes.string,
     onFocus: PropTypes.func,
-    onBlur: PropTypes.func
+    onBlur: PropTypes.func,
+    onIconPress: PropTypes.func
 };
 
 const defaultProps = {
     editable: true,
-    hideClear: true,
-    highlightColor: GlobalColors.blue
+    hideIconButton: true,
+    highlightColor: GlobalColors.blue,
+    icon: Icons.Clear
 };
 
 export default class TextBox extends Component {
@@ -45,7 +48,7 @@ export default class TextBox extends Component {
 
     onChangeText(text) {
         this.setState({value: text});
-        this.props.onChangeText &&  this.props.onChangeText(text);
+        this.props.onChangeText && this.props.onChangeText(text);
     }
 
     onFocus() {
@@ -63,29 +66,35 @@ export default class TextBox extends Component {
     }
 
     render() {
-        let header = null;
-        if (this.props.header) {
-            header = (<Text style={styles.header}>{this.props.header}</Text>)
-        }
+        const {header, hideIconButton, editable, icon, highlightColor, onIconPress, ...other} = this.props;
+        const {focus, value} = this.state;
 
         let clear = null;
-        if ((!this.props.hideClear || this.state.focus) && this.props.editable && this.state.value) {
+        if ((!hideIconButton || focus) && editable && value) {
             clear = (
-                <TouchableOpacity onPress={this.clearInput.bind(this)}>
-                    <Close style={styles.clear} />
+                <TouchableOpacity onPress={() => {
+                    onIconPress ? onIconPress()
+                                : this.clearInput()
+                }}>
+
+                    { <Image source={icon} style={styles.boxIcon} /> }
                 </TouchableOpacity>
             );
         }
 
         return (
             <View style={[styles.container, this.props.style]}>
-                {header}
+                {
+                    header &&
+                    (<Text style={styles.header}>{header}</Text>)
+                }
                 <View style={[styles.inputBox,
-                    {borderColor: this.state.focus ? this.props.highlightColor : GlobalColors.gray}]}>
+                    {borderColor: focus ? highlightColor : GlobalColors.gray}]}>
                     <TextInput underlineColorAndroid="transparent"
-                        {...this.props}
+                        {...other}
+                               editable={editable}
                                style={styles.textInput}
-                               value={this.state.value}
+                               value={value}
                                onChangeText={(text) => this.onChangeText(text)}
                                onFocus={this.onFocus.bind(this)}
                                onBlur={this.onBlur.bind(this)}

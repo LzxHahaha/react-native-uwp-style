@@ -22,8 +22,11 @@ export var styles = StyleSheet.create({
         paddingHorizontal: 2
     },
 
-    clear: {
-        marginHorizontal: 10
+    boxIcon: {
+        width: 14,
+        height: 14,
+        marginHorizontal: 5,
+        resizeMode: 'contain'
     },
 
     textInput: {

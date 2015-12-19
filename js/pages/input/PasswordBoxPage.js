@@ -16,7 +16,7 @@ export default class PasswordBoxPage extends Component {
         let document = [
             {name: 'autoFocus', type: 'bool', description: ''},
             {name: 'editable', type: 'bool', description: ''},
-            {name: 'hideClear', type: 'bool', description: 'Hide the clear button when lose focus.'},
+            {name: 'hideIconButton', type: 'bool', description: 'Hide the clear button when lose focus.'},
             {name: 'header', type: 'string', description: ''},
             {name: 'highlightColor', type: 'string', description: ''},
             {name: 'onBlur', type: 'function', description: ''},
@@ -24,7 +24,7 @@ export default class PasswordBoxPage extends Component {
             {name: 'onFocus', type: 'function', description: ''}
         ];
 
-        let note = 'If you put it in a ListView, you should set the "hideClear" property to false.';
+        let note = 'If you put it in a ListView, you should set the "hideIconButton" property to false.';
 
         this.state = {
             document: document
@@ -34,10 +34,10 @@ export default class PasswordBoxPage extends Component {
     render() {
         return (
             <DemoTemplate title={'PASSWORD BOX DEMO'} document={this.state.document} note={this.state.note}>
-                <PasswordBox style={styles.textbox} placeholder={'text'} hideClear={false} />
-                <PasswordBox style={styles.textbox} placeholder={'text'} header={'header'} hideClear={false}/>
+                <PasswordBox style={styles.textbox} placeholder={'text'} hideIconButton={false} />
+                <PasswordBox style={styles.textbox} placeholder={'text'} header={'header'} hideIconButton={false}/>
                 <PasswordBox style={styles.textbox} placeholder={'text'} header={'uneditable'}
-                             editable={false} value='lala' hideClear={false}/>
+                             editable={false} value='lala' hideIconButton={false}/>
             </DemoTemplate>
         );
     }
