@@ -14,6 +14,6 @@ export default class Router {
 
     static goBack() {
         let router = NavPan.instance;
-        router.goBack();
+        return router.goBack();
     }
 }

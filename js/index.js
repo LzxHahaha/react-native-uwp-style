@@ -7,7 +7,8 @@ import React, {
     Navigator,
     Image,
     Platform,
-    BackAndroid
+    BackAndroid,
+    ToastAndroid
 } from 'react-native';
 
 import {styles} from './index.style';
@@ -50,7 +51,20 @@ export default class UWP extends Component {
 
 if (Platform.OS === 'android') {
     BackAndroid.addEventListener('hardwareBackPress', function () {
-        Router.goBack();
-        return true;
+        let tmp = Router.goBack();
+        if (!tmp) {
+            if (global.confirmExit) {
+                return tmp;
+            }
+            else {
+                global.confirmExit = true;
+                ToastAndroid.show('Press again to quit', 2000);
+                setTimeout(() => {global.confirmExit = false}, 2000);
+                return true;
+            }
+        }
+        else {
+            return tmp;
+        }
     });
 }
