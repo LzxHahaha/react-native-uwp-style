@@ -10,7 +10,7 @@ import React, {
 import {styles} from './TextBox.style.js';
 import {GlobalColors, GlobalStyles} from '../../global.style.js';
 
-import Close from '../../symbols/Close';
+import Close from '../symbols/Close';
 
 const propTypes = {
     autoFocus: PropTypes.bool,

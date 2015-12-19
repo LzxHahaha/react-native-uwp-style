@@ -4,8 +4,8 @@ import React, {
     View
 } from 'react-native';
 
-import {styles} from './Close.style';
-import {GlobalColors, GlobalStyles} from '../global.style';
+import {styles} from './Close.style.js';
+import {GlobalColors, GlobalStyles} from '../../global.style';
 
 const propTypes = {
 };

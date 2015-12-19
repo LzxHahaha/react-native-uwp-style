@@ -9,7 +9,7 @@ import React, {
 import {styles} from './CheckBox.style.js';
 import {GlobalColors} from '../../global.style';
 
-import Tick from '../../symbols/Tick';
+import Tick from '../symbols/Tick';
 
 propTypes = {
     enable: PropTypes.bool,

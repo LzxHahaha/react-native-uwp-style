@@ -14,7 +14,7 @@ import {GlobalColors} from '../../global.style.js';
 
 import Button from '../action/Button';
 
-import Hamburger from '../../symbols/Hamburger';
+import Hamburger from '../symbols/Hamburger';
 
 propTypes = {
     paneWidth: PropTypes.number
@@ -60,6 +60,7 @@ export default class NavPane extends Component {
         }
         else {
             this.nav.pop();
+            return this.nav.getCurrentRoutes().length !== 1;
         }
     }
 

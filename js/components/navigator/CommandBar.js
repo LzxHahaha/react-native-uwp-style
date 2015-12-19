@@ -26,8 +26,8 @@ export default class CommandBar extends Component {
         let height = 0;
         let maxHeight = 0;
         if (subList) {
-            height = subList.length * 45;
-            maxHeight = height > 155 ? 155  : height;
+            height = subList.length * 45 + 25;
+            maxHeight = height > 155 ? 155 : height;
         }
 
         this.state = {
@@ -56,7 +56,7 @@ export default class CommandBar extends Component {
                 }),
                 Animated.timing(textOpacity, {
                     toValue: 1,
-                    duration: 50
+                    duration: 300
                 })
             ]).start();
         }
@@ -72,7 +72,7 @@ export default class CommandBar extends Component {
                 }),
                 Animated.timing(textOpacity, {
                     toValue: 0,
-                    duration: 50
+                    duration: 300
                 })
             ]).start();
         }

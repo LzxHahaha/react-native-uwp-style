@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalColors, GlobalFontSize} from '../global.style'
+import {GlobalColors, GlobalFontSize} from '../../global.style'
 
 export var styles = StyleSheet.create({
     container: {
