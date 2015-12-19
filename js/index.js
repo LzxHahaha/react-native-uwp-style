@@ -54,7 +54,7 @@ if (Platform.OS === 'android') {
         let tmp = Router.goBack();
         if (!tmp) {
             if (global.confirmExit) {
-                return tmp;
+                return false;
             }
             else {
                 global.confirmExit = true;
@@ -64,7 +64,7 @@ if (Platform.OS === 'android') {
             }
         }
         else {
-            return tmp;
+            return true;
         }
     });
 }

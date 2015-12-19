@@ -7,6 +7,8 @@ import React, {
 
 import {styles} from './Home.style.js';
 
+import * as Icons from '../components/symbols/Icons';
+
 import NavPaneTitle from '../components/navigator/NavPaneTitle';
 import CommandBar from '../components/navigator/CommandBar';
 
@@ -16,17 +18,11 @@ export default class Home extends Component {
 
 
         let buttons = [
-            {text: 'Share', icon: require('../image/share.png')}
-        ];
-        let sub = [
-            {text: 'item'},
-            {text: 'item'},
-            {text: 'item'}
+            {text: 'Hello', icon: Icons.Emoji}
         ];
 
         this.state = {
-            commandButtons: buttons,
-            subList: sub
+            commandButtons: buttons
         };
     }
 
@@ -43,7 +39,7 @@ export default class Home extends Component {
                     <Text style={styles.text}>Welcome to React Native!</Text>
                 </View>
 
-                <CommandBar barButtons={this.state.commandButtons} subList={this.state.subList} />
+                <CommandBar barButtons={this.state.commandButtons} />
             </View>
         );
     }

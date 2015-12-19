@@ -11,6 +11,7 @@ import React, {
 
 import {styles} from './CommandBar.style';
 import {SCREEN_WIDTH} from '../../global.style';
+import * as Icons from '../symbols/Icons';
 
 propTypes = {};
 
@@ -140,7 +141,9 @@ export default class CommandBar extends Component {
         buttons.push(
             <TouchableOpacity onPress={this.toggle.bind(this)} key={'more'}>
                 <View style={[styles.moreButton]}>
-                    <Text style={styles.moreText}>. . .</Text>
+                    <View style={styles.iconView}>
+                        <Image source={Icons.More} style={styles.icon}/>
+                    </View>
                 </View>
             </TouchableOpacity>
         );
