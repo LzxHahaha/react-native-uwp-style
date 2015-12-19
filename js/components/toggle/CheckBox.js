@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './CheckBox.style.js';
-import {GlobalColors} from '../../global.style';
+import {UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 import Tick from '../symbols/Tick';
 
@@ -23,7 +23,7 @@ defaultProps = {
     enable: true,
     isSelected: false,
     text: '',
-    color: GlobalColors.blue
+    color: UWPGlobalColors.blue
 };
 
 export default class CheckBox extends Component {

@@ -8,7 +8,7 @@ import React, {
 } from 'react-native';
 
 import {styles, sliderWidth} from './Slider.style.js';
-import {GlobalColors, GlobalFontSize} from '../../global.style.js';
+import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js';
 
 import Button from './Button'
 
@@ -24,7 +24,7 @@ const defaultProps = {
     enable: true,
     max: 100,
     value: 0,
-    color: GlobalColors.blue,
+    color: UWPGlobalColors.blue,
     scrollBarColor: 'gray'
 };
 

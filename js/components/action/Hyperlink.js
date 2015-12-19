@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './Hyperlink.style.js';
-import {GlobalColors, GlobalFontSize} from '../../global.style.js';
+import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js';
 
 const propTypes = {
     enable: PropTypes.bool,
@@ -37,7 +37,7 @@ export default class Hyperlink extends Component {
     render() {
         const {enable, color, style, text, ...others} = this.props;
 
-        let linkColor = color ? color : (enable? GlobalColors.blue : GlobalColors.gray);
+        let linkColor = color ? color : (enable? UWPGlobalColors.blue : UWPGlobalColors.gray);
         let activeOpacity = enable ? 0.5 : 1;
 
         return (

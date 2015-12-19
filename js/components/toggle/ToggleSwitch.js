@@ -8,7 +8,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './ToggleSwitch.style';
-import {GlobalColors} from '../../global.style';
+import {UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 propTypes = {
     isOn: PropTypes.bool,
@@ -20,7 +20,7 @@ propTypes = {
 defaultProps = {
     isOn: true,
     enable: true,
-    color: GlobalColors.blue
+    color: UWPGlobalColors.blue
 };
 
 export default class ToggleSwitch extends Component {

@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './RadioButton.style';
-import {GlobalColors} from '../../global.style';
+import {UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 propTypes = {
     enable: PropTypes.bool,
@@ -20,7 +20,7 @@ defaultProps = {
     enable: true,
     isSelected: false,
     text: '',
-    color: GlobalColors.blue
+    color: UWPGlobalColors.blue
 };
 
 export default class RadioButton extends Component {

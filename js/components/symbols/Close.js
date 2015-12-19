@@ -5,7 +5,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './Close.style.js';
-import {GlobalColors, GlobalStyles} from '../../global.style';
+import {UWPGlobalColors, UWPGlobalStyles} from '../../UWPGlobal.style.js';
 
 const propTypes = {
 };

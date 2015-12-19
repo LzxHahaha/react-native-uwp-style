@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {SCREEN_HEIGHT, GlobalFontSize, GlobalColors} from '../../global.style.js';
+import {SCREEN_HEIGHT, UWPGlobalFontSize, UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 export var styles = StyleSheet.create({
     container: {
@@ -24,7 +24,7 @@ export var styles = StyleSheet.create({
         top: 50,
         bottom: 0,
         height: SCREEN_HEIGHT-50,
-        backgroundColor: GlobalColors.dark
+        backgroundColor: UWPGlobalColors.dark
     },
 
     paneList: {
@@ -49,7 +49,7 @@ export var styles = StyleSheet.create({
     },
 
     paneButtonText: {
-        fontSize: GlobalFontSize.Base,
+        fontSize: UWPGlobalFontSize.Base,
         marginLeft: 10,
         color: 'white'
     },

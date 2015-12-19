@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalFontSize} from '../../global.style.js';
+import {UWPGlobalFontSize} from '../../UWPGlobal.style.js';
 
 export var styles = StyleSheet.create({
     container: {
@@ -16,6 +16,6 @@ export var styles = StyleSheet.create({
     },
 
     titleText: {
-        fontSize: GlobalFontSize.Subtitle
+        fontSize: UWPGlobalFontSize.Subtitle
     }
 });

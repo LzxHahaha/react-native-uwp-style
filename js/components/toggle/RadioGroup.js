@@ -6,7 +6,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './RadioGroup.style';
-import {GlobalColors} from '../../global.style';
+import {UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 import RadioButton from './RadioButton';
 
@@ -19,7 +19,7 @@ propTypes = {
 };
 
 defaultProps = {
-    color: GlobalColors.blue,
+    color: UWPGlobalColors.blue,
     direction: 'column',
     value: 0
 };

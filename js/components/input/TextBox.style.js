@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalColors, GlobalFontSize} from '../../global.style.js'
+import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js'
 
 export var styles = StyleSheet.create({
     container: {
@@ -10,15 +10,15 @@ export var styles = StyleSheet.create({
     },
 
     header: {
-        color: GlobalColors.black,
-        fontSize: GlobalFontSize.options
+        color: UWPGlobalColors.black,
+        fontSize: UWPGlobalFontSize.options
     },
 
     inputBox: {
         flexDirection: 'row',
         alignItems: 'center',
         borderWidth: 2,
-        borderColor: GlobalColors.gray,
+        borderColor: UWPGlobalColors.gray,
         paddingHorizontal: 2
     },
 

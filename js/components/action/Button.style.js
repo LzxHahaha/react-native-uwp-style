@@ -2,12 +2,12 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalColors} from '../../global.style.js';
+import {UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 export var styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
-        backgroundColor: GlobalColors.gray
+        backgroundColor: UWPGlobalColors.gray
     },
 
     text: {

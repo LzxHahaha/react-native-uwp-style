@@ -7,7 +7,7 @@ import {
 export const SCREEN_WIDTH = Dimensions.get('window').width;
 export const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-export const GlobalColors = {
+export const UWPGlobalColors = {
     black: 'black',
     white: 'white',
 
@@ -20,7 +20,7 @@ export const GlobalColors = {
     darkGray: '#555'
 };
 
-export const GlobalFontSize = {
+export const UWPGlobalFontSize = {
     Header: 46,
     Subheader: 34,
     Title: 24,
@@ -29,7 +29,7 @@ export const GlobalFontSize = {
     Caption: 12
 };
 
-export const GlobalStyles = {
+export const UWPGlobalStyles = {
     symbol: {
         height: 10,
         width: 10,

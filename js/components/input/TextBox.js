@@ -9,7 +9,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './TextBox.style.js';
-import {GlobalColors, GlobalStyles} from '../../global.style.js';
+import {UWPGlobalColors, UWPGlobalStyles} from '../../UWPGlobal.style.js';
 
 import * as Icons from '../symbols/Icons';
 
@@ -27,7 +27,7 @@ const propTypes = {
 const defaultProps = {
     editable: true,
     hideIconButton: true,
-    highlightColor: GlobalColors.blue,
+    highlightColor: UWPGlobalColors.blue,
     icon: Icons.Clear
 };
 
@@ -89,7 +89,7 @@ export default class TextBox extends Component {
                     (<Text style={styles.header}>{header}</Text>)
                 }
                 <View style={[styles.inputBox,
-                    {borderColor: focus ? highlightColor : GlobalColors.gray}]}>
+                    {borderColor: focus ? highlightColor : UWPGlobalColors.gray}]}>
                     <TextInput underlineColorAndroid="transparent"
                         {...other}
                                editable={editable}

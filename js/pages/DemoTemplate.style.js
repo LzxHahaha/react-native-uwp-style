@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalColors, GlobalFontSize} from '../global.style';
+import {UWPGlobalColors, UWPGlobalFontSize} from '../UWPGlobal.style.js';
 
 export var styles = StyleSheet.create({
     container: {
@@ -15,7 +15,7 @@ export var styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: GlobalFontSize.Subtitle,
+        fontSize: UWPGlobalFontSize.Subtitle,
         fontWeight: 'bold',
         marginVertical: 5,
         marginTop: 15
@@ -41,7 +41,7 @@ export var styles = StyleSheet.create({
     },
 
     propType: {
-        fontSize: GlobalFontSize.Caption
+        fontSize: UWPGlobalFontSize.Caption
     },
 
     propDescription: {

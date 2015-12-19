@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalColors} from '../../global.style';
+import {UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 export var styles = StyleSheet.create({
     container: {
@@ -13,7 +13,7 @@ export var styles = StyleSheet.create({
     line: {
         width: 20,
         height: 3,
-        backgroundColor: GlobalColors.black,
+        backgroundColor: UWPGlobalColors.black,
         marginVertical: 2
     }
 });

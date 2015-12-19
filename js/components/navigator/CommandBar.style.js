@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalFontSize} from '../../global.style';
+import {UWPGlobalFontSize} from '../../UWPGlobal.style.js';
 
 export var styles = StyleSheet.create({
     container: {
@@ -31,7 +31,7 @@ export var styles = StyleSheet.create({
         justifyContent: 'center',
         width: 50,
         height: 50,
-        paddingTop: -10
+        paddingTop: -15
     },
 
     icon: {
@@ -41,7 +41,7 @@ export var styles = StyleSheet.create({
 
     iconText: {
         color: 'black',
-        fontSize: GlobalFontSize.Caption,
+        fontSize: UWPGlobalFontSize.Caption,
         textAlign: 'center',
         marginTop: -15
     },
@@ -55,7 +55,7 @@ export var styles = StyleSheet.create({
 
     moreText: {
         color: 'black',
-        fontSize: GlobalFontSize.Base,
+        fontSize: UWPGlobalFontSize.Base,
         fontWeight: 'bold',
         textAlign: 'center',
         marginTop: -20

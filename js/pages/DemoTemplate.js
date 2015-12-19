@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './DemoTemplate.style.js';
-import {GlobalStyles} from '../global.style';
+import {UWPGlobalStyles} from '../UWPGlobal.style.js';
 
 import Router from '../Router';
 

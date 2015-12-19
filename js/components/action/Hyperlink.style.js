@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalColors} from '../../global.style.js';
+import {UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 export var styles = StyleSheet.create({
     container: {
@@ -10,15 +10,15 @@ export var styles = StyleSheet.create({
     },
 
     link: {
-        color: GlobalColors.blue,
-        textDecorationColor: GlobalColors.blue,
+        color: UWPGlobalColors.blue,
+        textDecorationColor: UWPGlobalColors.blue,
         textDecorationStyle: 'solid',
         textDecorationLine: 'underline'
     },
 
     disableLink: {
-        color: GlobalColors.gray,
-        textDecorationColor: GlobalColors.gray,
+        color: UWPGlobalColors.gray,
+        textDecorationColor: UWPGlobalColors.gray,
         textDecorationStyle: 'solid',
         textDecorationLine: 'underline'
     }

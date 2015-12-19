@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './ProgressBar.style.js';
-import {GlobalColors} from '../../global.style';
+import {UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 propTypes = {
     backgroundColor: PropTypes.string,
@@ -19,7 +19,7 @@ propTypes = {
 
 defaultProps = {
     backgroundColor: 'lightGray',
-    color: GlobalColors.blue,
+    color: UWPGlobalColors.blue,
     max: 100,
     value: 0
 };

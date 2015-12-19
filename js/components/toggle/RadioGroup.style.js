@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalFontSize} from '../../global.style';
+import {UWPGlobalFontSize} from '../../UWPGlobal.style.js';
 
 export var styles = StyleSheet.create({
     container: {
@@ -11,7 +11,7 @@ export var styles = StyleSheet.create({
 
     header: {
         color: 'black',
-        fontSize: GlobalFontSize.Base
+        fontSize: UWPGlobalFontSize.Base
     },
 
     radios: {

@@ -10,7 +10,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './CommandBar.style';
-import {SCREEN_WIDTH} from '../../global.style';
+import {SCREEN_WIDTH} from '../../UWPGlobal.style.js';
 import * as Icons from '../symbols/Icons';
 
 propTypes = {};

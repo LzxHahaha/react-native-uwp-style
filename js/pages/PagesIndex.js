@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './PagesIndex.style.js';
-import {GlobalStyles} from '../global.style';
+import {UWPGlobalStyles} from '../UWPGlobal.style.js';
 
 import Pages from '../config/pages';
 
@@ -46,7 +46,7 @@ export default class PagesIndex extends Component {
 
     renderSeparator() {
         return (
-            <View style={GlobalStyles.line} />
+            <View style={UWPGlobalStyles.line} />
         );
     }
 

@@ -10,7 +10,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './NavPane.style.js';
-import {GlobalColors} from '../../global.style.js';
+import {UWPGlobalColors} from '../../UWPGlobal.style.js';
 
 import Button from '../action/Button';
 
@@ -108,8 +108,8 @@ export default class NavPane extends Component {
 
         return (
             <Button onPress={() => this.onRowPress(onPress)}
-                    backgroundColor={GlobalColors.dark}
-                    highlightColor={GlobalColors.darkBlue}
+                    backgroundColor={UWPGlobalColors.dark}
+                    highlightColor={UWPGlobalColors.darkBlue}
             >
                 <View style={styles.paneButton}>
                     <View style={styles.iconView}>
@@ -146,8 +146,8 @@ export default class NavPane extends Component {
                        }}
                 />
 
-                <Button style={styles.button} backgroundColor={GlobalColors.blue}
-                        highlightColor={GlobalColors.darkBlue}
+                <Button style={styles.button} backgroundColor={UWPGlobalColors.blue}
+                        highlightColor={UWPGlobalColors.darkBlue}
                         onPress={() => {
                     this.togglePane()
                     }}

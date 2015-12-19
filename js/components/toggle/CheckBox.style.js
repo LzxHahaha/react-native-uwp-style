@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalColors, GlobalFontSize} from '../../global.style';
+import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js';
 
 export var styles = StyleSheet.create({
     container: {
@@ -30,6 +30,6 @@ export var styles = StyleSheet.create({
 
     text: {
         color: 'black',
-        fontSize: GlobalFontSize.Base
+        fontSize: UWPGlobalFontSize.Base
     }
 });

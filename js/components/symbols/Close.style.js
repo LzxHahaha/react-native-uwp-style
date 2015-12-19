@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {GlobalColors, GlobalFontSize} from '../../global.style'
+import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js'
 
 export var styles = StyleSheet.create({
     container: {
@@ -13,7 +13,7 @@ export var styles = StyleSheet.create({
     left: {
         width: 1,
         height: 12,
-        backgroundColor: GlobalColors.black,
+        backgroundColor: UWPGlobalColors.black,
         transform: [
             {rotate: '45deg'}
         ]
@@ -22,7 +22,7 @@ export var styles = StyleSheet.create({
     right: {
         width: 1,
         height: 12,
-        backgroundColor: GlobalColors.black,
+        backgroundColor: UWPGlobalColors.black,
         marginLeft: -1,
         transform: [
             {rotate: '-45deg'}
