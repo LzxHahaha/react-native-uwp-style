@@ -9,7 +9,7 @@ import React, {
 import {styles} from './DemoTemplate.style.js';
 import {UWPGlobalStyles} from '../UWPGlobal.style.js';
 
-import Router from '../Router';
+import Router from '../components/navigator/Router';
 
 import NavPaneTitle from '../components/navigator/NavPaneTitle';
 import Button from '../components/action/Button';

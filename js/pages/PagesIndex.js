@@ -11,7 +11,7 @@ import {UWPGlobalStyles} from '../UWPGlobal.style.js';
 
 import Pages from '../config/pages';
 
-import Router from '../Router';
+import Router from '../components/navigator/Router';
 import NavPaneTitle from '../components/navigator/NavPaneTitle';
 import Button from '../components/action/Button';
 

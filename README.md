@@ -18,7 +18,7 @@ $ react-native run-android
 ```
 
 ### Use the components
-> Copy the **js/components** and **js/config** and **js/Router** to your project.
+> Copy the **js/components** and **js/config** to your project.
 
 ## Completed Components
 

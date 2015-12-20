@@ -15,7 +15,7 @@ import {styles} from './index.style';
 
 import NavPane from './components/navigator/NavPane';
 import NavPaneTitle from './components/navigator/NavPaneTitle';
-import Router from './Router';
+import Router from './components/navigator/Router';
 
 import Pages from './config/pages';
 

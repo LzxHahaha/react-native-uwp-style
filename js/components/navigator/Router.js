@@ -1,5 +1,5 @@
-import Pages from './config/pages';
-import NavPan from './components/navigator/NavPane';
+import Pages from './../../config/pages';
+import NavPan from './NavPane';
 
 export default class Router {
     static goto(page, params = null) {
