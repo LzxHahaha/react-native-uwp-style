@@ -6,7 +6,8 @@
 
 Some react-native's components with Windows 10 style. You can get the design templates at [Windows Dev Center](https://dev.windows.com/en-us/design/assets).
 
-> **Watch out:** this project are only tested on android before. If you want use it on iOS, you should test it by yourself (Because I don't have a Mac).
+> **Watch out:** this project are only tested on android before. If you want use it on iOS,
+you should test it by yourself.
 
 ## How to use
 
@@ -49,7 +50,6 @@ $ react-native run-android
     * TimePicker
 * AutoSuggest
 * Dialog
-* Flyout
 * Hub
 * Tabs
 * Pivot
