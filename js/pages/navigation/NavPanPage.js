@@ -15,7 +15,7 @@ export default class NavPanPage extends Component {
         let document = [
             {name: 'buttons', type: '[{icon: Image.source, text: string, onPress: function}]',
                 description: 'Array of buttons in the pane.'},
-            {name: 'initialRoute', type: 'route: {component, name}', description: ''},
+            {name: 'initialRoute', type: 'route: {component: Component, name: string, params: object}', description: ''},
             {name: 'paneWidth', type: 'number', description: 'The pane\'s width when open.'}
         ];
 
@@ -26,7 +26,7 @@ export default class NavPanPage extends Component {
 
     render() {
         return (
-            <DemoTemplate title={'Navigator'} document={this.state.document}>
+            <DemoTemplate title={'NAVIGATOR DEMO'} document={this.state.document}>
                 <Text>You're already use it.</Text>
                 <Text>Click the hamburger button at the top, then you will see this component.</Text>
             </DemoTemplate>

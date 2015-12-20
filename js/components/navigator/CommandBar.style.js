@@ -52,14 +52,6 @@ export var styles = StyleSheet.create({
         justifyContent: 'center'
     },
 
-    moreText: {
-        color: 'black',
-        fontSize: UWPGlobalFontSize.Base,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: -20
-    },
-
     subList: {
         backgroundColor: '#f1f1f1',
         flex: 1

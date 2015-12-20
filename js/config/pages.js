@@ -10,6 +10,7 @@ import TextBoxPage from '../pages/input/TextBoxPage';
 import PasswordBoxPage from '../pages/input/PasswordBoxPage';
 
 import NavPanePage from '../pages/navigation/NavPanPage';
+import CommandBarPage from '../pages/navigation/CommandBarPage';
 
 import ProgressPage from '../pages/progress/ProgressBarPage';
 
@@ -52,6 +53,8 @@ Pages.ActionIndex = {
     }
 };
 
+// ===
+
 Pages.TextBox = {
     component: TextBoxPage,
     name: 'TextBox Demo'
@@ -73,9 +76,16 @@ Pages.InputIndex = {
     }
 };
 
+// ===
+
 Pages.NavPane = {
     component: NavPanePage,
     name: 'NavPane Demo'
+};
+
+Pages.CommandBar = {
+    component: CommandBarPage,
+    name: 'CommandBar Demo'
 };
 
 Pages.NavigatorIndex = {
@@ -83,10 +93,13 @@ Pages.NavigatorIndex = {
     name: 'NAVIGATOR',
     params: {
         pages: [
-            {text: 'NavPane', page: Pages.NavPane}
+            {text: 'NavPane', page: Pages.NavPane},
+            {text: 'CommandBar', page: Pages.CommandBar}
         ]
     }
 };
+
+// ===
 
 Pages.Progress = {
     component: ProgressPage,
@@ -103,6 +116,7 @@ Pages.ProgressIndex = {
     }
 };
 
+// ===
 
 Pages.ChechBox = {
     component: CheckBoxPage,

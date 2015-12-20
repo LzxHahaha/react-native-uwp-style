@@ -92,10 +92,10 @@ export default class DemoTemplate extends Component {
     }
 
     render() {
-        const {title} = this.props;
+        const {title, style} = this.props;
 
         return (
-            <View style={styles.container}>
+            <View style={[styles.container, style]}>
                 <NavPaneTitle title={title} />
 
                 <ListView
