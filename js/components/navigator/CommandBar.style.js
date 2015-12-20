@@ -15,8 +15,7 @@ export var styles = StyleSheet.create({
     bar: {
         flexDirection: 'row',
         alignItems: 'flex-start',
-        justifyContent: 'flex-end',
-        backgroundColor: 'lightGray'
+        justifyContent: 'flex-end'
     },
 
     iconButton: {

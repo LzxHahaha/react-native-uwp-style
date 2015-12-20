@@ -13,9 +13,13 @@ import {styles} from './CommandBar.style';
 import {SCREEN_WIDTH} from '../../UWPGlobal.style.js';
 import * as Icons from '../symbols/Icons';
 
-propTypes = {};
+propTypes = {
+    backgroundColor: PropTypes.string
+};
 
-defaultProps = {};
+defaultProps = {
+    backgroundColor: 'lightGray'
+};
 
 export default class CommandBar extends Component {
     constructor(props) {
@@ -155,7 +159,9 @@ export default class CommandBar extends Component {
         const {backgroundColor} = this.props;
 
         return (
-            <Animated.View style={[styles.container, {height: this.state.barHeight}]}>
+            <Animated.View style={[styles.container, {backgroundColor: backgroundColor,
+                height: this.state.barHeight}]}
+            >
                 {this.renderSubList()}
                 <View style={[styles.bar]}>
                     {this.renderButtons()}
