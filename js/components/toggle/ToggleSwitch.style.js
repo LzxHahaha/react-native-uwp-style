@@ -2,15 +2,15 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 export var styles = StyleSheet.create({
     container: {
     },
 
     header: {
-        color: 'black',
-        fontSize: UWPGlobalFontSize.Base
+        color: Theme.colors.foreground,
+        fontSize: Theme.fontSize.Base
     },
 
     switchContainer: {
@@ -38,20 +38,20 @@ export var styles = StyleSheet.create({
     },
 
     off: {
-        backgroundColor: 'black'
+        backgroundColor: Theme.colors.foreground
     },
 
     circleDisable: {
-        backgroundColor: 'gray'
+        backgroundColor: Theme.colors.foregroundDisable
     },
 
     text: {
-        color: 'black',
-        fontSize: UWPGlobalFontSize.Base
+        color: Theme.colors.foreground,
+        fontSize: Theme.fontSize.Base
     },
 
     textDisable: {
-        color: 'gray',
-        fontSize: UWPGlobalFontSize.Base
+        color: Theme.colors.foregroundDisable,
+        fontSize: Theme.fontSize.Base
     }
 });

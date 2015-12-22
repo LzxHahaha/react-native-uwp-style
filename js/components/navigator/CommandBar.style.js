@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {UWPGlobalFontSize} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 export var styles = StyleSheet.create({
     container: {
@@ -39,8 +39,8 @@ export var styles = StyleSheet.create({
     },
 
     iconText: {
-        color: 'black',
-        fontSize: UWPGlobalFontSize.Caption,
+        color: Theme.colors.foreground,
+        fontSize: Theme.fontSize.Caption,
         textAlign: 'center',
         marginTop: -15
     },
@@ -53,7 +53,7 @@ export var styles = StyleSheet.create({
     },
 
     subList: {
-        backgroundColor: '#f1f1f1',
+        backgroundColor: Theme.colors.backgroundLight,
         flex: 1
     },
 
@@ -63,6 +63,6 @@ export var styles = StyleSheet.create({
     },
 
     rowItemText: {
-        color: 'black'
+        color: Theme.colors.foreground
     }
 });

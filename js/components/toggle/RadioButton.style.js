@@ -2,7 +2,8 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js';
+//import {UWPGlobalColors} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 export var styles = StyleSheet.create({
     container: {
@@ -13,7 +14,7 @@ export var styles = StyleSheet.create({
     box: {
         width: 20,
         height: 20,
-        backgroundColor: 'white',
+        backgroundColor: 'transparent',
         borderColor: 'black',
         borderRadius: 10,
         borderWidth: 2,
@@ -25,8 +26,8 @@ export var styles = StyleSheet.create({
         height: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'white',
-        borderColor: UWPGlobalColors.blue,
+        backgroundColor: 'transparent',
+        borderColor: Theme.colors.highlight,
         borderRadius: 10,
         borderWidth: 2,
         marginRight: 5
@@ -35,16 +36,16 @@ export var styles = StyleSheet.create({
     circle: {
         width: 10,
         height: 10,
-        backgroundColor: 'black',
+        backgroundColor: Theme.colors.foreground,
         borderRadius: 6
     },
 
     text: {
-        color: 'black',
-        fontSize: UWPGlobalFontSize.Base
+        color: Theme.colors.foreground,
+        fontSize: Theme.fontSize.Base
     },
 
     textDisable: {
-        fontSize: UWPGlobalFontSize.Base
+        fontSize: Theme.fontSize.Base
     }
 });

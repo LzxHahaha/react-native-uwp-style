@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './Button.style.js';
-import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 const propTypes = {
     enable: PropTypes.bool,
@@ -19,9 +19,9 @@ const propTypes = {
 
 const defaultProps = {
     enable: true,
-    backgroundColor: UWPGlobalColors.gray,
-    color: UWPGlobalColors.black,
-    highlightColor: 'lightgray',
+    backgroundColor: Theme.colors.buttonBackground,
+    color: Theme.colors.foreground,
+    highlightColor: Theme.colors.buttonPress,
     onPress: () => {}
 };
 
@@ -39,7 +39,7 @@ export default class Button extends Component {
     render() {
         const {enable, backgroundColor, color, highlightColor, text, children, style} = this.props;
 
-        let textColor =  (enable ? color : UWPGlobalColors.darkGray);
+        let textColor =  (enable ? color : Theme.colors.foregroundDisable);
         let highlight = enable ? highlightColor : backgroundColor;
         let content = text ? (<Text style={[styles.text, {color: textColor}]}>{text}</Text>)
                            : (<View style={styles.content}>{children}</View>);

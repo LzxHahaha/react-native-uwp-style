@@ -10,7 +10,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './NavPane.style.js';
-import {UWPGlobalColors} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 import Button from '../action/Button';
 
@@ -64,6 +64,12 @@ export default class NavPane extends Component {
         }
     }
 
+    hidePane() {
+        if (this.state.isPaneOpen) {
+            this.togglePane();
+        }
+    }
+
     togglePane() {
         const {paneWidth} = this.props;
         const {isPaneOpen, width}  = this.state;
@@ -108,8 +114,8 @@ export default class NavPane extends Component {
 
         return (
             <Button onPress={() => this.onRowPress(onPress)}
-                    backgroundColor={UWPGlobalColors.dark}
-                    highlightColor={UWPGlobalColors.darkBlue}
+                    backgroundColor={Theme.colors.backgroundLight}
+                    highlightColor={Theme.colors.backgroundBasic}
             >
                 <View style={styles.paneButton}>
                     <View style={styles.iconView}>
@@ -146,13 +152,13 @@ export default class NavPane extends Component {
                        }}
                 />
 
-                <Button style={styles.button} backgroundColor={UWPGlobalColors.blue}
-                        highlightColor={UWPGlobalColors.darkBlue}
+                <Button style={styles.button} backgroundColor={Theme.colors.backgroundBasic}
+                        highlightColor={Theme.colors.foregroundDisable}
                         onPress={() => {
                     this.togglePane()
                     }}
                 >
-                    <Hamburger color={'white'}/>
+                    <Hamburger />
                 </Button>
 
                 <Animated.View style={[styles.pane, {width: this.state.width}]}>

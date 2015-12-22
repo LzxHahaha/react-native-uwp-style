@@ -8,7 +8,7 @@ import React, {
 } from 'react-native';
 
 import {styles, sliderWidth} from './Slider.style.js';
-import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 import Button from './Button'
 
@@ -24,7 +24,7 @@ const defaultProps = {
     enable: true,
     max: 100,
     value: 0,
-    color: UWPGlobalColors.blue,
+    color: Theme.colors.highlight,
     scrollBarColor: 'gray'
 };
 
@@ -46,8 +46,8 @@ export default class Slider extends Component {
     }
 
     panResponse = PanResponder.create({
-        onStartShouldSetPanResponder: () => true,
-        onMoveShouldSetPanResponder: () => true,
+    onStartShouldSetPanResponder: () => true,
+    onMoveShouldSetPanResponder: () => true,
 
         onPanResponderGrant: (evt, gestureState) => {
             const {value, step, xMin, xCurrent, width} = this.state;

@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {UWPGlobalFontSize} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 export var styles = StyleSheet.create({
     container: {
@@ -12,10 +12,10 @@ export var styles = StyleSheet.create({
         marginLeft: 50,
         paddingLeft: 10,
         justifyContent: 'center',
-        backgroundColor: 'lightgray'
+        backgroundColor: Theme.colors.backgroundBasic
     },
 
     titleText: {
-        fontSize: UWPGlobalFontSize.Subtitle
+        fontSize: Theme.fontSize.Subtitle
     }
 });

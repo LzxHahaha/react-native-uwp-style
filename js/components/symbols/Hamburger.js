@@ -6,13 +6,14 @@ import React, {
 } from 'react-native';
 
 import {styles} from './Hamburger.style.js';
+import Theme from '../../config/theme';
 
 propTypes = {
     color: PropTypes.string
 };
 
 defaultProps = {
-    color: 'black'
+    color: Theme.colors.foreground
 };
 
 export default class Hamburger extends Component {

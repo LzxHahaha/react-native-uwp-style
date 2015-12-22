@@ -1,8 +1,11 @@
 import {
-    StyleSheet
+    StyleSheet,
+    Dimensions
 } from 'react-native';
 
-import {SCREEN_HEIGHT, UWPGlobalFontSize, UWPGlobalColors} from '../../UWPGlobal.style.js';
+export const SCREEN_HEIGHT = Dimensions.get('window').height;
+
+import Theme from '../../config/theme';
 
 export var styles = StyleSheet.create({
     container: {
@@ -23,8 +26,8 @@ export var styles = StyleSheet.create({
         position: 'absolute',
         top: 50,
         bottom: 0,
-        height: SCREEN_HEIGHT-50,
-        backgroundColor: UWPGlobalColors.dark
+        height: SCREEN_HEIGHT - 50,
+        backgroundColor: Theme.colors.backgroundLight
     },
 
     paneList: {
@@ -49,9 +52,9 @@ export var styles = StyleSheet.create({
     },
 
     paneButtonText: {
-        fontSize: UWPGlobalFontSize.Base,
+        fontSize: Theme.fontSize.Base,
         marginLeft: 10,
-        color: 'white'
+        color: Theme.colors.foreground
     },
     scene: {
         marginTop: 50

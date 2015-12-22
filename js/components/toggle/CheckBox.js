@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './CheckBox.style.js';
-import {UWPGlobalColors} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 import Tick from '../symbols/Tick';
 
@@ -23,7 +23,7 @@ defaultProps = {
     enable: true,
     isSelected: false,
     text: '',
-    color: UWPGlobalColors.blue
+    color: Theme.colors.highlight
 };
 
 export default class CheckBox extends Component {
@@ -49,13 +49,14 @@ export default class CheckBox extends Component {
         const {enable, text, color} = this.props;
 
         let box = (
-            <View style={[styles.box, {borderColor: enable ? 'black' : 'gray'}]} />
+            <View style={[styles.box, {borderColor: enable ? Theme.colors.foreground
+                                                           : Theme.colors.foregroundDisable}]} />
         );
         if (isSelected) {
             box = (
                 <View style={[styles.boxActive, {
-                        borderColor: enable ? color : 'gray',
-                        backgroundColor: enable ? color : 'gray'
+                        borderColor: enable ? color : Theme.colors.foregroundDisable,
+                        backgroundColor: enable ? color : Theme.colors.foregroundDisable
                     }]}
                 >
                     <Tick />
@@ -69,7 +70,8 @@ export default class CheckBox extends Component {
             <TouchableOpacity onPress={this.onPress.bind(this)} activeOpacity={opacity}>
                 <View style={[styles.container, this.props.style]}>
                     {box}
-                    <Text style={[styles.text, {color: enable ? 'black' : 'gray'}]}>{text}</Text>
+                    <Text style={[styles.text, {color: enable ? Theme.colors.foreground
+                                                              : Theme.colors.foregroundDisable}]}>{text}</Text>
                 </View>
             </TouchableOpacity>
         );

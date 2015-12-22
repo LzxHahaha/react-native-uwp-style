@@ -8,7 +8,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './ToggleSwitch.style';
-import {UWPGlobalColors} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 propTypes = {
     isOn: PropTypes.bool,
@@ -20,7 +20,7 @@ propTypes = {
 defaultProps = {
     isOn: true,
     enable: true,
-    color: UWPGlobalColors.blue
+    color: Theme.colors.highlight
 };
 
 export default class ToggleSwitch extends Component {
@@ -69,8 +69,9 @@ export default class ToggleSwitch extends Component {
                     <View style={styles.switchContainer}>
                         <View style={[
                                 styles.switcher, {
-                                    backgroundColor: enable ? (isOn ? color : 'white') : 'white',
-                                    borderColor: enable ? (isOn ? color : 'black') : 'gray'
+                                    backgroundColor: enable ? (isOn ? color : 'transparent') : 'transparent',
+                                    borderColor: enable ? (isOn ? color : Theme.colors.foreground)
+                                                        : Theme.colors.foregroundDisable
                                 }
                             ]}
                         >

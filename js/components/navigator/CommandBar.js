@@ -6,11 +6,12 @@ import React, {
     TouchableOpacity,
     View,
     ListView,
-    Image
+    Image,
+    Dimensions
 } from 'react-native';
 
 import {styles} from './CommandBar.style';
-import {SCREEN_WIDTH} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 import * as Icons from '../symbols/Icons';
 
 propTypes = {
@@ -18,7 +19,7 @@ propTypes = {
 };
 
 defaultProps = {
-    backgroundColor: 'lightGray'
+    backgroundColor: Theme.colors.backgroundBasic
 };
 
 export default class CommandBar extends Component {
@@ -115,6 +116,7 @@ export default class CommandBar extends Component {
 
     renderButtons() {
         const {barButtons} = this.props;
+        const SCREEN_WIDTH = Dimensions.get('window').width;
 
         let buttons = [];
 

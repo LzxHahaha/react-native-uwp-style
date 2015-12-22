@@ -2,7 +2,7 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 export var sliderWidth = 10;
 
@@ -16,8 +16,8 @@ export var styles = StyleSheet.create({
     },
 
     header: {
-        color: 'black',
-        fontSize: UWPGlobalFontSize.Base,
+        color: Theme.colors.foreground,
+        fontSize: Theme.fontSize.Base,
         marginBottom: 5
     },
 

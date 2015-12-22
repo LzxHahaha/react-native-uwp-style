@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './Hyperlink.style.js';
-import {UWPGlobalColors, UWPGlobalFontSize} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 const propTypes = {
     enable: PropTypes.bool,
@@ -23,7 +23,6 @@ export default class Hyperlink extends Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
         };
     }
@@ -37,13 +36,13 @@ export default class Hyperlink extends Component {
     render() {
         const {enable, color, style, text, ...others} = this.props;
 
-        let linkColor = color ? color : (enable? UWPGlobalColors.blue : UWPGlobalColors.gray);
+        let linkColor = color ? color : (enable? Theme.colors.highlight : Theme.colors.foregroundDisable);
         let activeOpacity = enable ? 0.5 : 1;
 
         return (
             <View style={[styles.container, style]} {...others}>
                 <TouchableOpacity activeOpacity={activeOpacity} onPress={this.onPress.bind(this)}>
-                    <Text style={[styles.link, {color: linkColor}]}>{text}</Text>
+                    <Text style={[styles.link, {color: linkColor, textDecorationColor: color}]}>{text}</Text>
                 </TouchableOpacity>
             </View>
         );

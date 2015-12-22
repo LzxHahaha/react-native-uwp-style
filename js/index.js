@@ -42,7 +42,7 @@ export default class UWP extends Component {
 
     render() {
         return (
-            <NavPane buttons={this.state.buttons}
+            <NavPane ref={ref => {global.rootNav = ref} } buttons={this.state.buttons}
                      initialRoute={Pages.Home}
             />
         );
@@ -51,6 +51,7 @@ export default class UWP extends Component {
 
 if (Platform.OS === 'android') {
     BackAndroid.addEventListener('hardwareBackPress', function () {
+        global.rootNav.hidePane();
         let tmp = Router.goBack();
         if (!tmp) {
             if (global.confirmExit) {

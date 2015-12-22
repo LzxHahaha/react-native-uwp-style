@@ -2,8 +2,6 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {UWPGlobalColors} from '../../UWPGlobal.style.js';
-
 export var styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
@@ -11,9 +9,8 @@ export var styles = StyleSheet.create({
     },
 
     line: {
-        width: 20,
-        height: 3,
-        backgroundColor: UWPGlobalColors.black,
+        width: 21,
+        height: 2,
         marginVertical: 2
     }
 });

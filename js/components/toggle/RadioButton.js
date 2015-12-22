@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './RadioButton.style';
-import {UWPGlobalColors} from '../../UWPGlobal.style.js';
+import Theme from '../../config/theme';
 
 propTypes = {
     enable: PropTypes.bool,
@@ -20,7 +20,7 @@ defaultProps = {
     enable: true,
     isSelected: false,
     text: '',
-    color: UWPGlobalColors.blue
+    color: Theme.colors.highlight
 };
 
 export default class RadioButton extends Component {
@@ -50,11 +50,13 @@ export default class RadioButton extends Component {
         const {isSelected} = this.state;
         const {enable, text, color} = this.props;
 
-        let box = ( <View style={[styles.box, {borderColor: enable ? 'black' : 'gray'}]} /> );
+        let box = ( <View style={[styles.box, {borderColor: enable ? Theme.colors.foreground
+                                                                   : Theme.colors.foregroundDisable}]} /> );
         if (isSelected) {
             box = (
-                <View style={[styles.boxActive, {borderColor: enable ? color : 'gray'}]}>
-                    <View style={[styles.circle, {backgroundColor: enable ? 'black' : 'gray'}]} />
+                <View style={[styles.boxActive, {borderColor: enable ? color : Theme.colors.foregroundDisable}]}>
+                    <View style={[styles.circle, {backgroundColor: enable ? Theme.colors.foreground
+                                                                          : Theme.colors.foregroundDisable}]} />
                 </View>
             );
         }
