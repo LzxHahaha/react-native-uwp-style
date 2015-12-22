@@ -5,8 +5,6 @@ import {
 import Theme from '../../config/theme';
 
 export var styles = StyleSheet.create({
-    container: {
-    },
     title: {
         height: 50,
         marginLeft: 50,

@@ -17,11 +17,23 @@ import Button from '../action/Button';
 import Hamburger from '../symbols/Hamburger';
 
 propTypes = {
-    paneWidth: PropTypes.number
+    paneWidth: PropTypes.number,
+    backgroundColor: PropTypes.string,
+    highlightColor: PropTypes.string,
+    buttonBackground: PropTypes.string,
+    buttonHighlight: PropTypes.string,
+    buttonColor: PropTypes.string,
+    color: PropTypes.string
 };
 
 defaultProps = {
-    paneWidth: 256
+    paneWidth: 256,
+    backgroundColor: Theme.colors.backgroundLight,
+    highlightColor: Theme.colors.foregroundDisable,
+    buttonBackground: Theme.colors.backgroundLight,
+    buttonHighlight: Theme.colors.foregroundDisable,
+    buttonColor: Theme.colors.foreground,
+    color: Theme.colors.foreground
 };
 
 export default class NavPane extends Component {
@@ -57,6 +69,7 @@ export default class NavPane extends Component {
         if (NavPane.jumpCount > 0) {
             --NavPane.jumpCount;
             this.nav.jumpBack();
+            return true;
         }
         else {
             this.nav.pop();
@@ -111,22 +124,23 @@ export default class NavPane extends Component {
 
     renderButtons(rowData) {
         const {icon, text, onPress} = rowData;
+        const {backgroundColor, highlightColor, color} = this.props;
 
         return (
             <Button onPress={() => this.onRowPress(onPress)}
-                    backgroundColor={Theme.colors.backgroundLight}
-                    highlightColor={Theme.colors.backgroundBasic}
+                    backgroundColor={backgroundColor}
+                    highlightColor={highlightColor}
             >
                 <View style={styles.paneButton}>
                     <View style={styles.iconView}>
                     {
                         icon &&
-                            <Image source={icon} style={styles.paneButtonIcon} />
+                        <Image source={icon} style={styles.paneButtonIcon} />
                     }
                     </View>
                     {
                         text &&
-                            <Text style={styles.paneButtonText}>{text}</Text>
+                        <Text style={[styles.paneButtonText, {color: color}]}>{text}</Text>
                     }
                 </View>
             </Button>
@@ -134,7 +148,7 @@ export default class NavPane extends Component {
     }
 
     render() {
-        const {initialRoute} = this.props;
+        const {initialRoute, buttonBackground, buttonHighlight, buttonColor} = this.props;
 
         return (
             <View style={styles.container}>
@@ -152,13 +166,13 @@ export default class NavPane extends Component {
                        }}
                 />
 
-                <Button style={styles.button} backgroundColor={Theme.colors.backgroundBasic}
-                        highlightColor={Theme.colors.foregroundDisable}
+                <Button style={styles.button} backgroundColor={buttonBackground}
+                        highlightColor={buttonHighlight}
                         onPress={() => {
                     this.togglePane()
                     }}
                 >
-                    <Hamburger />
+                    <Hamburger color={buttonColor} />
                 </Button>
 
                 <Animated.View style={[styles.pane, {width: this.state.width}]}>

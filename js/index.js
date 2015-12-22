@@ -12,6 +12,7 @@ import React, {
 } from 'react-native';
 
 import {styles} from './index.style';
+import {UWPGlobalColors} from './UWPGlobal.style';
 
 import NavPane from './components/navigator/NavPane';
 import NavPaneTitle from './components/navigator/NavPaneTitle';
@@ -43,7 +44,8 @@ export default class UWP extends Component {
     render() {
         return (
             <NavPane ref={ref => {global.rootNav = ref} } buttons={this.state.buttons}
-                     initialRoute={Pages.Home}
+                     initialRoute={Pages.Home} buttonColor={'white'}
+                     buttonBackground={UWPGlobalColors.blue}buttonHighlight={UWPGlobalColors.darkBlue}
             />
         );
     }
