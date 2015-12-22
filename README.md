@@ -19,12 +19,30 @@ $ react-native run-android
 ```
 
 ### Use the components
-> Copy the **js/components** and **js/config** to your project.
+> Copy the **`js/components/*`** and **`js/config/*`** to your project.
 
-## Completed Components
+## What this project have
 
-* Icons
-    * [Icons](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/symbols/Icons.js)
+### Router
+
+You can use the `<NavPan />` component to jump between each page,
+only need to modify the `cpnfig/pages.js`.
+
+### Theme
+
+Now only have one preset theme, but I will provides other soon. You can also config your theme,
+just need to add a style file and modify the `config/theme.js`.
+
+### Icons
+
+There have 189 preset icons can let you choose, you can find they at `js/components/symbol/icons`.
+
+> Only have black icon now, the white icon will be soon.
+
+### Components
+
+> There are completed components, more will be soon.
+
 * Actions
     * [Hyperlink](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/action/Hyperlink.js)
     * [Button](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/action/Button.js)
@@ -43,6 +61,9 @@ $ react-native run-android
     * [ToggleSwitch](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/toggle/ToggleSwitch.js)
 
 ## TODO
+
+### Components
+
 * ComboBox
 * DatePicker
     * DatePicker
@@ -53,4 +74,11 @@ $ react-native run-android
 * Hub
 * Tabs
 * Pivot
-* ContextMenu
+
+### Document
+
+Wiki is on the way.
+
+### Other
+
+* Add setting mechanism for the application.
