@@ -5,15 +5,19 @@ export default class Router {
     static goto(page, params = null) {
         let router = NavPan.instance;
 
-        if (params) {
-            page.params = params;
-        }
+        if (router) {
+            if (params) {
+                page.params = params;
+            }
 
-        router.gotoPage(page);
+            router.gotoPage(page);
+        }
     }
 
     static goBack() {
         let router = NavPan.instance;
-        return router.goBack();
+        if (router) {
+            return router.goBack();
+        }
     }
 }

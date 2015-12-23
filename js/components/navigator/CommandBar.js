@@ -127,7 +127,7 @@ export default class CommandBar extends Component {
                 const {icon, text, onPress} = barButtons[i];
 
                 buttons.push(
-                    <TouchableOpacity onPress={onPress && onPress()} key={i}>
+                    <TouchableOpacity onPress={() => {onPress && onPress()}} key={i}>
                         <View style={styles.iconButton}>
                             <View style={styles.iconView}>
                                 {
