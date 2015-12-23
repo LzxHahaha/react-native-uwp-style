@@ -17,6 +17,7 @@ import {UWPGlobalColors} from './UWPGlobal.style';
 import NavPane from './components/navigator/NavPane';
 import NavPaneTitle from './components/navigator/NavPaneTitle';
 import Router from './components/navigator/Router';
+import Dialog from './components/overlays/Dialog';
 
 import Pages from './config/pages';
 
@@ -31,7 +32,7 @@ export default class UWP extends Component {
             //{text: 'DROP-DOWNS', onPress: () => {}},
             {text: 'INPUT FIELDS', onPress: () => {Router.goto(Pages.InputIndex)}},
             {text: 'NAVIGATION', onPress: () => {Router.goto(Pages.NavigatorIndex)}},
-            //{text: 'OVERLAYS', onPress: () => {}},
+            {text: 'OVERLAYS', onPress: () => {  }},
             {text: 'PROGRESS', onPress: () => {Router.goto(Pages.ProgressIndex)}},
             {text: 'TOGGLES', onPress: () => {Router.goto(Pages.ToggleIndex)}}
         ];
@@ -42,11 +43,16 @@ export default class UWP extends Component {
     }
 
     render() {
+        console.log(global);
+
         return (
-            <NavPane ref={ref => {global.rootNav = ref} } buttons={this.state.buttons}
-                     initialRoute={Pages.Home} buttonColor={'white'}
-                     buttonBackground={UWPGlobalColors.blue}buttonHighlight={UWPGlobalColors.darkBlue}
-            />
+            <View style={styles.container}>
+                <NavPane ref={ref => {global.rootNav = ref} } buttons={this.state.buttons}
+                         initialRoute={Pages.Home} buttonColor={'white'}
+                         buttonBackground={UWPGlobalColors.blue} buttonHighlight={UWPGlobalColors.darkBlue}
+                />
+                <Dialog />
+            </View>
         );
     }
 }

@@ -26,7 +26,7 @@ $ react-native run-android
 ### Router
 
 You can use the `<NavPan />` component to jump between each page,
-only need to modify the `cpnfig/pages.js`.
+only need to modify the `config/pages.js`.
 
 ### Theme
 

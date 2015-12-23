@@ -24,6 +24,8 @@ export default class PagesIndex extends Component {
         this.state = {
             dataSource: dataSource.cloneWithRows(this.props.pages)
         };
+
+        this.line = 0;
     }
 
     renderHeader() {
@@ -34,11 +36,13 @@ export default class PagesIndex extends Component {
         );
     }
 
-    renderRow(rowData) {
+    renderRow(rowData, sectionID, rowID) {
         return (
-            <TouchableOpacity onPress={() => {
-                Router.goto(rowData.page);
-            }} >
+            <TouchableOpacity key={rowID}
+                onPress={() => {
+                    Router.goto(rowData.page);
+                }}
+            >
                 <Text style={styles.rowTitle}>{'<' + rowData.text + '>'}</Text>
             </TouchableOpacity>
         )
@@ -46,7 +50,7 @@ export default class PagesIndex extends Component {
 
     renderSeparator() {
         return (
-            <View style={UWPGlobalStyles.line} />
+            <View style={UWPGlobalStyles.line} key={this.line++} />
         );
     }
 

@@ -11,14 +11,14 @@ import * as Icons from '../components/symbols/Icons';
 
 import NavPaneTitle from '../components/navigator/NavPaneTitle';
 import CommandBar from '../components/navigator/CommandBar';
+import Dialog from '../components/overlays/UWPDialog';
 
 export default class Home extends Component {
     constructor(props) {
         super(props);
 
-
         let buttons = [
-            {text: 'Hello', icon: Icons.Emoji}
+            {text: 'Hello', icon: Icons.Emoji, onPress: this.helloPress }
         ];
 
         this.state = {
@@ -26,9 +26,10 @@ export default class Home extends Component {
         };
     }
 
-    onPress(page) {
-        this.props.navigator.push(page);
+    helloPress() {
+        Dialog.show('Hello!', 'lalala');
     }
+
 
     render() {
         return (
