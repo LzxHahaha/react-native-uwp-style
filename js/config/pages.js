@@ -12,6 +12,8 @@ import PasswordBoxPage from '../pages/input/PasswordBoxPage';
 import NavPanePage from '../pages/navigation/NavPanPage';
 import CommandBarPage from '../pages/navigation/CommandBarPage';
 
+import DialogPage from '../pages/overlay/DialogPage';
+
 import ProgressPage from '../pages/progress/ProgressBarPage';
 
 import CheckBoxPage from '../pages/toggle/CheckBoxPage';
@@ -98,6 +100,24 @@ Pages.NavigatorIndex = {
         ]
     }
 };
+// ===
+
+Pages.Dialog = {
+    component: DialogPage,
+    name: 'Dialog Demo'
+};
+
+Pages.OverlayIndex = {
+    component: PageIndex,
+    name: 'OVERLAYS',
+    params: {
+        pages: [
+            {text: 'Dialog', page: Pages.Dialog}
+        ]
+    }
+};
+
+// ===
 
 // ===
 

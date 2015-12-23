@@ -18,6 +18,7 @@ import NavPane from './components/navigator/NavPane';
 import NavPaneTitle from './components/navigator/NavPaneTitle';
 import Router from './components/navigator/Router';
 import Dialog from './components/overlays/Dialog';
+import UWPDialog from './components/overlays/UWPDialog';
 
 import Pages from './config/pages';
 
@@ -32,7 +33,7 @@ export default class UWP extends Component {
             //{text: 'DROP-DOWNS', onPress: () => {}},
             {text: 'INPUT FIELDS', onPress: () => {Router.goto(Pages.InputIndex)}},
             {text: 'NAVIGATION', onPress: () => {Router.goto(Pages.NavigatorIndex)}},
-            {text: 'OVERLAYS', onPress: () => {  }},
+            {text: 'OVERLAYS', onPress: () => {Router.goto(Pages.OverlayIndex)}},
             {text: 'PROGRESS', onPress: () => {Router.goto(Pages.ProgressIndex)}},
             {text: 'TOGGLES', onPress: () => {Router.goto(Pages.ToggleIndex)}}
         ];
@@ -59,6 +60,12 @@ export default class UWP extends Component {
 
 if (Platform.OS === 'android') {
     BackAndroid.addEventListener('hardwareBackPress', function () {
+        console.log(UWPDialog.isOpen);
+        if (UWPDialog.isOpen) {
+            UWPDialog.hide();
+            return true;
+        }
+
         global.rootNav.hidePane();
         let tmp = Router.goBack();
         if (!tmp) {

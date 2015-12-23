@@ -22,15 +22,21 @@ export default class DemoTemplate extends Component {
     constructor(props) {
         super(props);
 
+        let propsList = this.props.document ? this.props.document : [];
+
         let dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
         this.state = {
-            dataSource: dataSource.cloneWithRows(this.props.document)
+            dataSource: dataSource.cloneWithRows(propsList)
         };
     }
 
     renderHeader() {
         const {children} = this.props;
+
+        let propsHeader = this.props.document
+                          ? (<Text style={styles.title}>PROPS</Text>)
+                          : null;
 
         return (
             <View>
@@ -40,7 +46,7 @@ export default class DemoTemplate extends Component {
                     {children}
                 </View>
 
-                <Text style={styles.title}>PROPS</Text>
+                {propsHeader}
             </View>
         );
     }

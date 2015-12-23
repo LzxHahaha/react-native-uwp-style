@@ -5,15 +5,16 @@ export default class UWPDialog {
                 leftText: string = 'OK', leftPress = () => {},
                 rightText: string = 'Cancel', rightPress = () => {}) {
         let dialog = Dialog.instance;
-        if (dialog) {
-            dialog.show(title, content, leftText, leftPress, rightText, rightPress);
-        }
+        dialog && dialog.show(title, content, leftText, leftPress, rightText, rightPress);
     }
 
     static hide() {
         let dialog = Dialog.instance;
-        if (dialog) {
-            dialog.hide();
-        }
+        dialog && dialog.hide();
+    }
+
+    static get isOpen() {
+        let dialog = Dialog.instance;
+        return dialog && dialog.isOpen;
     }
 }

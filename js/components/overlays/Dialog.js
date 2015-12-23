@@ -26,7 +26,8 @@ export default class Dialog extends Component {
             leftPress: () => {},
             rightPress: () => {this.hide()},
             opacity: new Animated.Value(0),
-            top: new Animated.Value(-maxHeight)
+            top: new Animated.Value(-maxHeight),
+            isOpen: false
         };
 
         if (!Dialog.instance) {
@@ -35,14 +36,14 @@ export default class Dialog extends Component {
     }
 
     get isOpen() {
-        return this.state.opacity != 0;
+        return this.state.isOpen;
     }
 
     show(title: string, content: string,
          leftText: string = 'OK', leftPress = () => {},
          rightText: string = 'Cancel', rightPress = () => {}) {
 
-        if (!this.state.opacity == 0) {
+        if (!this.state.isOpen) {
             Animated.parallel([
                 Animated.timing(this.state.opacity, {
                     toValue: 1,
@@ -51,7 +52,7 @@ export default class Dialog extends Component {
                 Animated.sequence([
                     Animated.timing(this.state.top, {
                         toValue: 10,
-                        duration: 300
+                        duration: 250
                     }),
                     Animated.spring(this.state.top, {
                         toValue: 1,
@@ -59,6 +60,8 @@ export default class Dialog extends Component {
                     })
                 ])
             ]).start();
+
+            this.setState({isOpen: true});
 
             if (title !== this.state.title || content !== this.state.content
                 || leftText !== this.state.leftText || leftPress !== this.state.leftPress
@@ -76,7 +79,7 @@ export default class Dialog extends Component {
     }
 
     hide() {
-        if (this.state.opacity) {
+        if (this.state.isOpen) {
             Animated.parallel([
                 Animated.timing(this.state.opacity, {
                     toValue: 0,
@@ -87,6 +90,8 @@ export default class Dialog extends Component {
                     duration: 250
                 })
             ]).start();
+
+            this.setState({isOpen: false});
         }
     }
 
