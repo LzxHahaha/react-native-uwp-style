@@ -53,6 +53,8 @@ There have 189 preset icons can let you choose, you can find they at `js/compone
 * Navigation
     * [NavPane](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/navigator/NavPane.js)
     * [CommandBar](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/navigator/CommandBar.js)
+* Overlays
+    * [Dialog](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/overlays/Dialog.js)
 * Progress
     * [ProgressBar](https://github.com/LzxHahaha/react-native-uwp-style/blob/master/js/components/progress/ProgressBar.js)
 * Toggle
@@ -67,10 +69,8 @@ There have 189 preset icons can let you choose, you can find they at `js/compone
 * ComboBox
 * DatePicker
     * DatePicker
-    * CalebdarPicker
     * TimePicker
 * AutoSuggest
-* Dialog
 * Hub
 * Tabs
 * Pivot

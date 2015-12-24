@@ -10,8 +10,6 @@ import React, {
 import {styles, sliderWidth} from './Slider.style.js';
 import Theme from '../../config/theme';
 
-import Button from './Button'
-
 const propTypes = {
     enable: PropTypes.bool,
     max: PropTypes.number,
@@ -25,7 +23,7 @@ const defaultProps = {
     max: 100,
     value: 0,
     color: Theme.colors.highlight,
-    scrollBarColor: 'gray'
+    scrollBarColor: Theme.colors.backgroundBasic
 };
 
 export default class Slider extends Component {
