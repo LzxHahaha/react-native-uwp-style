@@ -53,8 +53,9 @@ export default class ToggleSwitch extends Component {
     }
 
     render() {
-        const {isOn} = this.state;
+        const {isOn, left} = this.state;
         const {header, color, enable, text, style} = this.props;
+        const {foreground, foregroundDisable} = Theme.colors;
 
         let opacity = enable ? 0.5 : 1;
 
@@ -69,16 +70,16 @@ export default class ToggleSwitch extends Component {
                     <View style={styles.switchContainer}>
                         <View style={[
                                 styles.switcher, {
-                                    backgroundColor: enable ? (isOn ? color : 'transparent') : 'transparent',
-                                    borderColor: enable ? (isOn ? color : Theme.colors.foreground)
-                                                        : Theme.colors.foregroundDisable
+                                    backgroundColor: enable ? (isOn ? color : 'transparent') : foregroundDisable,
+                                    borderColor: enable ? (isOn ? color : foreground)
+                                                        : foregroundDisable
                                 }
                             ]}
                         >
 
                             <Animated.View style={[styles.circle,
                                     enable ? (isOn ? styles.on : styles.off) : styles.circleDisable,
-                                    {left: this.state.left}
+                                    {left: left}
                                 ]}
                             />
 
