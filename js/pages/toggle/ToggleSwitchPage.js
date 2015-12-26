@@ -32,10 +32,10 @@ export default class ToggleSwitchPage extends Component {
 
         return (
             <DemoTemplate title={'TOGGLE SWITCH DEMO'} document={document}>
-                <ToggleSwitch style={styles.field} text={'Action Text'} />
-                <ToggleSwitch style={styles.field} text={'Action Text'} isOn={false} />
-                <ToggleSwitch style={styles.field} text={'Action Text'} enable={false} />
-                <ToggleSwitch style={styles.field} text={'Action Text'} enable={false} isOn={false} />
+                <ToggleSwitch style={styles.field} header={'Control Header'} />
+                <ToggleSwitch style={styles.field} header={'Control Header'} isOn={false} />
+                <ToggleSwitch style={styles.field} header={'Control Header'} enable={false} />
+                <ToggleSwitch style={styles.field} header={'Control Header'} enable={false} isOn={false} />
             </DemoTemplate>
         );
     }

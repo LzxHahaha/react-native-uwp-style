@@ -54,7 +54,7 @@ export default class ToggleSwitch extends Component {
 
     render() {
         const {isOn, left} = this.state;
-        const {header, color, enable, text, style} = this.props;
+        const {header, color, enable, style} = this.props;
         const {foreground, foregroundDisable} = Theme.colors;
 
         let opacity = enable ? 0.5 : 1;
@@ -84,7 +84,7 @@ export default class ToggleSwitch extends Component {
                             />
 
                         </View>
-                        <Text style={enable ? styles.text : styles.textDisable}>{text}</Text>
+                        <Text style={enable ? styles.text : styles.textDisable}>{isOn ? 'On' : 'Off'}</Text>
                     </View>
                 </TouchableOpacity>
             </View>

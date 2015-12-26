@@ -10,7 +10,8 @@ export var styles = StyleSheet.create({
 
     header: {
         color: Theme.colors.foreground,
-        fontSize: Theme.fontSize.Base
+        fontSize: Theme.fontSize.Base,
+        marginBottom: 5
     },
 
     switchContainer: {
