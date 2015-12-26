@@ -10,7 +10,7 @@ import React, {
 
 import {styles} from './TextBox.style.js';
 import Theme from '../../config/theme';
-import * as Icons from '../symbols/Icons';
+import {Icons} from '../symbols/Icons';
 
 const propTypes = {
     autoFocus: PropTypes.bool,

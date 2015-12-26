@@ -7,7 +7,7 @@ import React, {
 
 import {styles} from './Home.style.js';
 
-import * as Icons from '../components/symbols/Icons';
+import {Icons} from '../components/symbols/Icons';
 
 import NavPaneTitle from '../components/navigator/NavPaneTitle';
 import CommandBar from '../components/navigator/CommandBar';

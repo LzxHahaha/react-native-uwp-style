@@ -8,7 +8,7 @@ import {styles} from '../TestPage.style';
 
 import DemoTemplate from '../DemoTemplate';
 import CommandBar from '../../components/navigator/CommandBar';
-import * as Icons from '../../components/symbols/Icons';
+import {Icons} from '../../components/symbols/Icons';
 
 export default class CommandBarPage extends Component {
     constructor(props) {

@@ -12,7 +12,7 @@ import React, {
 
 import {styles} from './CommandBar.style';
 import Theme from '../../config/theme';
-import * as Icons from '../symbols/Icons';
+import {Icons} from '../symbols/Icons';
 
 propTypes = {
     backgroundColor: PropTypes.string
@@ -119,13 +119,15 @@ export default class CommandBar extends Component {
         const SCREEN_WIDTH = Dimensions.get('window').width;
 
         let buttons = [];
+        for(let icon in Icons) {
+            console.log(icon)
+        }
 
         if (barButtons) {
             let max = SCREEN_WIDTH / 65 - 1;
 
             for (let i = 0; i < barButtons.length && i < max; ++i) {
                 const {icon, text, onPress} = barButtons[i];
-
                 buttons.push(
                     <TouchableOpacity onPress={() => {onPress && onPress()}} key={i}>
                         <View style={styles.iconButton}>
