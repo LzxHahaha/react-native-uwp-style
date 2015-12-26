@@ -44,4 +44,4 @@ export const fontSize = {
     Caption: 12
 };
 
-export const isDarkStyle = true;
+export const isDarkStyle = false;

@@ -119,9 +119,6 @@ export default class CommandBar extends Component {
         const SCREEN_WIDTH = Dimensions.get('window').width;
 
         let buttons = [];
-        for(let icon in Icons) {
-            console.log(icon)
-        }
 
         if (barButtons) {
             let max = SCREEN_WIDTH / 65 - 1;
