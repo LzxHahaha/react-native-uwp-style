@@ -33,7 +33,7 @@ export default class CommandBarPage extends Component {
                 <DemoTemplate title={'COMMAND BAR DEMO'} document={this.state.document}
                               note={'This component is absolute position, so when you use it, you should make sure this will not cover other component.'}
                               style={{marginBottom: 50}}>
-                    <Text>Look at bottom of this page.</Text>
+                    <Text style={styles.text}>Look at bottom of this page.</Text>
                 </DemoTemplate>
 
                 <CommandBar barButtons={[{text: 'Hello', icon: Icons.Emoji}]}

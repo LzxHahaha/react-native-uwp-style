@@ -43,14 +43,14 @@ export default class HyperlinkPage extends Component {
                                onPress={() => {this.setState({defaultCount: defaultCount + 1});}}
                     />
                 </Field>
-                <Text>You click the this hyperlink {defaultCount} times.</Text>
+                <Text style={styles.text}>You click the this hyperlink {defaultCount} times.</Text>
 
                 <Field header={'Default Disable'} style={styles.field}>
                     <Hyperlink text={'You can\'t click me.'}
                                enable={false}
                     />
                 </Field>
-                <Text>This hyperlink is disable.</Text>
+                <Text style={styles.text}>This hyperlink is disable.</Text>
 
 
                 <Field header={'Custom Enable'} style={styles.field}>
@@ -61,7 +61,7 @@ export default class HyperlinkPage extends Component {
                     />
                 </Field>
 
-                <Text>Next hyperlink is {customEnable ? 'enable' : 'disable'}.</Text>
+                <Text style={styles.text}>Next hyperlink is {customEnable ? 'enable' : 'disable'}.</Text>
 
                 <Field header={'Custom Disable'} style={styles.field}>
                     <Hyperlink text={'You ' + (customEnable ? 'can' : 'can\'t') + ' click me.'}
@@ -70,7 +70,7 @@ export default class HyperlinkPage extends Component {
                                onPress={() => {this.setState({customCount: customCount + 1});}}
                     />
                 </Field>
-                <Text>You click this hyperlink {customCount} times.</Text>
+                <Text style={styles.text}>You click this hyperlink {customCount} times.</Text>
 
             </DemoTemplate>
         );

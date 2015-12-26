@@ -78,7 +78,7 @@ export default class DemoTemplate extends Component {
                     <Text style={styles.title}>NOTE</Text>
 
                     <View style={styles.well}>
-                        <Text>{note}</Text>
+                        <Text style={styles.note}>{note}</Text>
                     </View>
                 </View>
             );

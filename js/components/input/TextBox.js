@@ -92,8 +92,10 @@ export default class TextBox extends Component {
                     <TextInput underlineColorAndroid="transparent"
                         {...other}
                                editable={editable}
-                               style={styles.textInput}
+                               style={[styles.textInput, {color: editable ? Theme.colors.foreground
+                                                                          : Theme.colors.foregroundDisable}]}
                                value={value}
+                               placeholderTextColor={Theme.colors.placeholder}
                                onChangeText={(text) => this.onChangeText(text)}
                                onFocus={this.onFocus.bind(this)}
                                onBlur={this.onBlur.bind(this)}

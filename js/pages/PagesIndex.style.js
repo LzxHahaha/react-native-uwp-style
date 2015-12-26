@@ -2,23 +2,30 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {UWPGlobalFontSize} from '../UWPGlobal.style.js';
+import Theme from '../config/theme';
 
 export var styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: Theme.colors.pageBackground
     },
 
     header: {
         justifyContent: 'flex-end',
         paddingTop: 15,
         borderBottomWidth: 1,
-        borderColor: 'lightgray'
+        borderColor: Theme.colors.border,
+        marginHorizontal: 10
+    },
+
+    headerText: {
+        color: Theme.colors.foreground,
+        fontWeight: 'bold'
     },
 
     rowTitle: {
-        color: 'black',
-        fontSize: UWPGlobalFontSize.Base,
+        color: Theme.colors.foreground,
+        fontSize: Theme.fontSize.Base,
         margin: 10
     },
 

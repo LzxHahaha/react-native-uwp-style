@@ -18,7 +18,7 @@ propTypes = {
 };
 
 defaultProps = {
-    backgroundColor: Theme.colors.backgroundBasic,
+    backgroundColor: Theme.colors.border,
     color: Theme.colors.highlight,
     max: 100,
     value: 0

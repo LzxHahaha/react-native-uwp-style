@@ -33,6 +33,7 @@ export var styles = StyleSheet.create({
         flex: 1,
         paddingVertical: 1,
         paddingHorizontal: 2,
-        marginHorizontal: 2
+        marginHorizontal: 2,
+        color: Theme.colors.foreground
     }
 });

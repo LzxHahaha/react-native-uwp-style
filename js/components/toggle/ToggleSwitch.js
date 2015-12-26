@@ -70,7 +70,7 @@ export default class ToggleSwitch extends Component {
                     <View style={styles.switchContainer}>
                         <View style={[
                                 styles.switcher, {
-                                    backgroundColor: enable ? (isOn ? color : 'transparent') : foregroundDisable,
+                                    backgroundColor: enable ? (isOn ? color : 'transparent') : 'transparent',
                                     borderColor: enable ? (isOn ? color : foreground)
                                                         : foregroundDisable
                                 }

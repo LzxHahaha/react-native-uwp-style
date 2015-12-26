@@ -49,7 +49,7 @@ export default class ButtonPage extends Component {
                             this.setState({test: text})
                          }} />
 
-                <Text>  AutoFocus Box's Text: {this.state.test}</Text>
+                <Text style={styles.text}>  AutoFocus Box's Text: {this.state.test}</Text>
             </DemoTemplate>
         )
     }

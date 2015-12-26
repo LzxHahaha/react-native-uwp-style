@@ -23,7 +23,7 @@ const defaultProps = {
     max: 100,
     value: 0,
     color: Theme.colors.highlight,
-    scrollBarColor: Theme.colors.backgroundBasic
+    scrollBarColor: Theme.colors.border
 };
 
 export default class Slider extends Component {

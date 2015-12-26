@@ -2,11 +2,12 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {UWPGlobalColors, UWPGlobalFontSize} from '../UWPGlobal.style.js';
+import Theme from '../config/theme';
 
 export var styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: Theme.colors.pageBackground
     },
 
     scrollContainer: {
@@ -15,10 +16,11 @@ export var styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: UWPGlobalFontSize.Subtitle,
+        fontSize: Theme.fontSize.Subtitle,
         fontWeight: 'bold',
         marginVertical: 5,
-        marginTop: 15
+        marginTop: 15,
+        color: Theme.colors.foreground
     },
 
     well: {
@@ -36,21 +38,27 @@ export var styles = StyleSheet.create({
     },
 
     propName: {
-        color: 'black',
+        color: Theme.colors.foreground,
         fontWeight: 'bold'
     },
 
     propType: {
-        fontSize: UWPGlobalFontSize.Caption
+        color: Theme.colors.foreground,
+        fontSize: Theme.fontSize.Caption
     },
 
     propDescription: {
-        marginTop: 10
+        marginTop: 10,
+        color: Theme.colors.foreground
     },
 
     line: {
         height: 1,
         backgroundColor: 'darkGray'
+    },
+
+    note: {
+        color: Theme.colors.foreground
     },
 
     backButton: {

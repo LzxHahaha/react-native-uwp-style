@@ -31,7 +31,7 @@ export default class PagesIndex extends Component {
     renderHeader() {
         return (
             <View style={styles.header}>
-                <Text>Components</Text>
+                <Text style={styles.headerText}>Components</Text>
             </View>
         );
     }

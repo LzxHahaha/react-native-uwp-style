@@ -91,8 +91,10 @@ export default class PasswordBox extends Component {
                     <TextInput underlineColorAndroid="transparent"
                         {...other}
                                editable={editable}
-                               style={styles.textInput}
+                               style={[styles.textInput, {color: editable ? Theme.colors.foreground
+                                                                          : Theme.colors.foregroundDisable}]}
                                value={value}
+                               placeholderTextColor={Theme.colors.placeholder}
                                secureTextEntry={!showPassword}
                                onChangeText={(text) => this.onChangeText(text)}
                                onFocus={this.onFocus.bind(this)}

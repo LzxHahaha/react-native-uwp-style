@@ -46,6 +46,7 @@ export var styles = StyleSheet.create({
     },
 
     textDisable: {
+        color: Theme.colors.foregroundDisable,
         fontSize: Theme.fontSize.Base
     }
 });

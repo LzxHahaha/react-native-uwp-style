@@ -3,22 +3,23 @@ import {
 } from 'react-native';
 
 export const colors = {
-    pageBackground: 'white',
+    pageBackground: 'black',
 
-    backgroundBasic: '#E6E6E6',
-    backgroundLight: '#F1F1F1',
+    backgroundBasic: '#1E1F1E',
+    backgroundLight: '#2B2B2B',
 
-    border: '#9A9A9A',
+    border: '#838484',
 
-    foreground: 'black',
-    foregroundDisable: '#999',
+    foreground: 'white',
+    placeholder: '#888',
+    foregroundDisable: '#555',
 
-    buttonBackground: '#CDCDCD',
-    buttonPress: '#8B8B8B',
+    buttonBackground: '#323232',
+    buttonPress: '#787878',
 
     highlight: '#0078D6',
     highlightPress: '#0063B1',
-    select: '#92C1E6'
+    select: '#115992'
 };
 
 export const styles = StyleSheet.create({

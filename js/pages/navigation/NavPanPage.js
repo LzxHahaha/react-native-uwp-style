@@ -27,8 +27,8 @@ export default class NavPanPage extends Component {
     render() {
         return (
             <DemoTemplate title={'NAVIGATOR DEMO'} document={this.state.document}>
-                <Text>You're already use it.</Text>
-                <Text>Click the hamburger button at the top, then you will see this component.</Text>
+                <Text style={styles.text}>You're already use it.</Text>
+                <Text style={styles.text}>Click the hamburger button at the top, then you will see this component.</Text>
             </DemoTemplate>
         );
     }
