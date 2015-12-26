@@ -61,7 +61,7 @@ export default class UWP extends Component {
 if (Platform.OS === 'android') {
     BackAndroid.addEventListener('hardwareBackPress', function () {
         console.log(UWPDialog.isOpen);
-        if (UWPDialog.isOpen) {
+        if (UWPDialog && UWPDialog.isOpen) {
             UWPDialog.hide();
             return true;
         }

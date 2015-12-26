@@ -1,5 +1,5 @@
-//import {styles, colors, fontSize} from './light.style';
-import * as theme from './dark.style';
+import * as theme from './light.style';
+//import * as theme from './dark.style';
 
 export default class Theme {
     static get colors() {
