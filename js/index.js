@@ -13,6 +13,7 @@ import React, {
 
 import {styles} from './index.style';
 import {UWPGlobalColors} from './UWPGlobal.style';
+import {Icons} from './components/symbols/Icons';
 
 import NavPane from './components/navigator/NavPane';
 import NavPaneTitle from './components/navigator/NavPaneTitle';
@@ -29,13 +30,13 @@ export default class UWP extends Component {
         super(props);
 
         let buttons = [
-            {text: 'ACTIONS', onPress: () => {Router.goto(Pages.ActionIndex)}},
-            //{text: 'DROP-DOWNS', onPress: () => {}},
-            {text: 'INPUT FIELDS', onPress: () => {Router.goto(Pages.InputIndex)}},
-            {text: 'NAVIGATION', onPress: () => {Router.goto(Pages.NavigatorIndex)}},
-            {text: 'OVERLAYS', onPress: () => {Router.goto(Pages.OverlayIndex)}},
-            {text: 'PROGRESS', onPress: () => {Router.goto(Pages.ProgressIndex)}},
-            {text: 'TOGGLES', onPress: () => {Router.goto(Pages.ToggleIndex)}}
+            {icon: Icons.Touchpointer, text: 'ACTIONS', onPress: () => {Router.goto(Pages.ActionIndex)}},
+            //{icon: Icons.Allapps, text: 'DROP-DOWNS', onPress: () => {}},
+            {icon: Icons.Edit, text: 'INPUT FIELDS', onPress: () => {Router.goto(Pages.InputIndex)}},
+            {icon: Icons.World, text: 'NAVIGATION', onPress: () => {Router.goto(Pages.NavigatorIndex)}},
+            {icon: Icons.Message, text: 'OVERLAYS', onPress: () => {Router.goto(Pages.OverlayIndex)}},
+            {icon: Icons.Closepane, text: 'PROGRESS', onPress: () => {Router.goto(Pages.ProgressIndex)}},
+            {icon: Icons.Switch, text: 'TOGGLES', onPress: () => {Router.goto(Pages.ToggleIndex)}}
         ];
 
         this.state = {

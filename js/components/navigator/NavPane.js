@@ -122,14 +122,17 @@ export default class NavPane extends Component {
         rowPress && rowPress();
     }
 
-    renderButtons(rowData) {
+    renderButtons(rowData, sectionID, rowID, highlightRow) {
         const {icon, text, onPress} = rowData;
         const {backgroundColor, highlightColor, color} = this.props;
 
         return (
-            <Button onPress={() => this.onRowPress(onPress)}
+            <Button key={rowID}
                     backgroundColor={backgroundColor}
-                    highlightColor={highlightColor}
+                    highlightColor={highlightColor} onPress={() => {
+                        //highlightRow(rowID);
+                        this.onRowPress(onPress);
+                    }}
             >
                 <View style={styles.paneButton}>
                     <View style={styles.iconView}>
@@ -176,6 +179,7 @@ export default class NavPane extends Component {
                 </Button>
 
                 <Animated.View style={[styles.pane, {width: this.state.width}]}>
+                    <Text>{this.state.index}</Text>
                     <ListView
                         style={styles.paneList}
                         dataSource={this.state.buttons}
