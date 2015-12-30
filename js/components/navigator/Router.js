@@ -6,11 +6,14 @@ export default class Router {
         let router = NavPan.instance;
 
         if (router) {
-            if (params) {
-                page.params = params;
-            }
+            let route = {
+                ...page,
+                params: {
+                    ...params
+                }
+            };
 
-            router.gotoPage(page);
+            router.gotoPage(route);
         }
     }
 

@@ -35,18 +35,23 @@ export default class RadioGroup extends Component {
         };
     }
 
-    renderButtons() {
-        const {buttons, color} = this.props;
+    render() {
+        const {direction, header, style, buttons, color} = this.props;
         const {value} = this.state;
 
-        let dom = [];
-
-        for (let i = 0; i < buttons.length; ++i) {
-            let text = buttons[i];
-            dom.push(
-                <RadioButton ref={'Radio' + i} text={text} isSelected={i === value}
-                             value={i} style={styles.radio} color={color}
-                             onSelectChange={(i) => {
+        return (
+            <View style={[styles.container, style]}>
+                {
+                    header &&
+                    <Text style={styles.header}>{header}</Text>
+                }
+                <View style={[styles.radios, {flexDirection: direction}]}>
+                    {
+                        buttons.map((el, index) => {
+                            return (
+                                <RadioButton key={index} ref={'Radio' + index} text={el} isSelected={index === value}
+                                             value={index} style={styles.radio} color={color}
+                                             onSelectChange={(i) => {
                                 if (i !== value) {
                                     if (value !== null) {
                                         this.refs['Radio' + value].cancel();
@@ -58,24 +63,10 @@ export default class RadioGroup extends Component {
                                     this.setState({value: null});
                                 }
                              }}
-                />
-            );
-        }
-
-        return dom;
-    }
-
-    render() {
-        const {direction, header, style} = this.props;
-
-        return (
-            <View style={[styles.container, style]}>
-                {
-                    header &&
-                    <Text style={styles.header}>{header}</Text>
-                }
-                <View style={[styles.radios, {flexDirection: direction}]}>
-                    {this.renderButtons()}
+                                />
+                            );
+                        })
+                    }
                 </View>
             </View>
         );
